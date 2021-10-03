@@ -1,0 +1,112 @@
+.renklendir{
+	color: red;
+}
+
+.selfHeader{
+	color: blueviolet;
+}
+
+.makeitRed{
+	/*Class Seçici*/
+	color: darkred;
+	font-size: 20px;
+}
+
+#hastagId{
+	/*Id Seçici*/
+	color: hotpink;
+	font-family: fantasy;
+}
+
+div{
+	/*Tag Seçici*/
+	background-color: lightyellow;
+}
+
+.yaziTipi{
+	color: #f58d42;
+	font-family: Tahoma,Verdana,Arial;
+	font-size: 25px;
+	font-style: italic;
+}
+
+.kalin{
+	font-weight: bold;
+}
+
+.bosluklar{
+	word-spacing: 0.2cm;
+	letter-spacing: 0.3cm;
+	line-height: 35px;
+}
+
+.dekorasyon{
+	text-decoration: underline;
+	line-height: 45px;
+	/*overline line-through none*/
+}
+
+.resmiAyarla{
+	vertical-align: middle;
+}
+
+.kucuk{
+	text-transform: lowercase;
+	text-align: center;
+}
+
+.buyuk{
+	text-transform: uppercase;
+	text-align: right;
+}
+
+.senBilirsinIsini{
+	text-transform: capitalize;
+	text-align: left;
+	text-indent: 50px;
+}
+
+.listeleme1{
+	list-style-type: square ;
+	/*katakana, upper-alpha, upper-roman, decimal-leading-zero*/
+}
+
+.listeleme2{
+	list-style-image: url(https://findicons.com/files/icons/2344/faenza/48/checkbox.png);
+	list-style-position: inside;
+}
+
+.fareAyarla{
+	cursor: crosshair;
+	/*text,wait,resize,hand*/	
+}
+
+.zemin1{
+	background-color: green;
+	background-image: url("https://cdn.hipwallpaper.com/m/10/43/dMBzbm.jpg");
+	background-repeat: no-repeat;
+	background-position: left, center;
+	background-attachment: fixed;
+	padding: 50px;
+}
+
+.zemin2{
+	background-color: black;
+	color: white;
+	margin-top: 100px;
+	margin-left: 150px;
+	font-size: 25px;
+	font-family: monospace;
+}
+
+.kutula{
+	background-color: red;
+	width: 250px;
+	height: 250px;
+	margin: 10px;
+	margin-left: 100px;
+}
+
+.kutuIci{
+	padding: 20px;
+}
