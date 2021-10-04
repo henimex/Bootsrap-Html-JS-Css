@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bootstrap 4 - Tipografik</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<style type="text/css">
+
+	@media(min-width: 576px){
+		body{
+			background: blue;
+		}
+	}
+	@media(min-width: 768px){
+		body{
+			background: red;
+		}
+	}
+	@media(min-width: 992px){
+		body{
+			background: green;
+		}
+	}
+	@media(min-width: 1200px){
+		body{
+			background: whitesmoke;
+		}
+	}
+	@media(max-width: 576px){
+		body{
+			background: orange;
+		}
+	}
+
+		.selfList{
+			 list-style-type: ">> ";
+			 list-style-position: outside;
+		}
+		.selfBorder{
+			border: ;
+		}
+		.rcorners1 {
+			/*border-radius: 25px;*/
+			/*border-radius: 15px 50px 30px 5px; */
+			/*border-radius: 15px 50px 30px;*/
+			border-radius: 15px 50px;
+			background: #73AD21;
+			padding: 20px;
+			width: 300px;
+			height: 200px;
+		}
+				.rcorners2 {
+			/*border-radius: 25px;*/
+			/*border-radius: 15px 50px 30px 5px; */
+			/*border-radius: 15px 50px 30px;*/
+			border-radius: 50px 15px;
+			background: #7b358f;
+			padding: 20px;
+			width: 300px;
+			height: 200px;
+		}
+		.thumbs{
+			width: 250px;
+			padding: 10px;
+			border-radius: 15px;
+			border: 5px solid purple;
+		}
+	</style>
+
+
+</head>
+<body>
+
+	<div class="container">
+		
+		<h1>Display Headers</h1>
+		<hr>
+		<h1 class="display-1">Joseph Henimex <u><strong>Git: </strong></u> <small>github.com/henimex</small> </h1>
+		<h2 class="display-2">Joseph Henimex <u><strong>Git: </strong></u> <small>github.com/henimex</small> </h1>
+		<h3 class="display-3">Joseph Henimex <u><strong>Git: </strong></u><small>github.com/henimex</small> </h1>
+		<h4 class="display-4">Joseph Henimex <u><strong>Git: </strong></u> <small>github.com/henimex</small> </h1>
+			<p><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip <strong>ex</strong> ea commodo
+			consequat. <strong>Duis aute irure dolor</strong> in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla <mark>pariatur</mark>. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt <s>anim</s> id est laborum.</em></p>
+			<button class="btn btn-success"> Buy Now : <del>$45</del> $34</button>
+			<p class="text-muted small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+
+		<h1>Lead</h1>
+		<hr>
+
+		<h4 class="display-4"><strong>Leading Text</strong></h4>
+		<p class="lead"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur <strong class="text-success">adipisicing</strong> elit, sed do eiusmod </p>
+		<p class="text-justify">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco <mark>laboris</mark> nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in <abbr title="Türkiye Cumhuriyeti Devleti">T.C.</abbr>culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur <strong class="text-success">sint occaecat</strong>  cupidatat non 
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. For printing this text you can use <kbd>CTRL+P</kbd></p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		<em class="text-muted">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</em> 
+		<h4>Main Courses</h4>
+		<div class="row">
+			<div class="col-md-3">
+				<ol>
+					<li>Course 1</li>
+					<li>Course 2</li>
+					<li>Course 3</li>
+				</ol>
+			</div>
+			<div class="col-md-3">
+				<ul>
+					<li>Course 1</li>
+					<li>Course 2</li>
+					<li>Course 3</li>
+				</ul>
+			</div>
+			<div class="col-md-3">
+				<ul class="selfList">
+					<li>Course 1</li>
+					<li>Course 2</li>
+					<li>Course 3</li>
+				</ul>
+			</div>
+		</div>
+		
+		<p class="text-right">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud it anim id est laborum.</p>
+
+		<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+		<p class="text-left">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud it anim id est laborum.</p>
+
+		<p class="text-nowrap">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud it anim id est laborum.</p>
+
+		<pre class="text-right">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud it anim id est laborum.</pre>
+		
+
+
+		<br> <br>
+
+		<dl>
+			<dd>Loremqui officia dst laborum.</dd>
+			<dt>Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur.</dt>
+		</dl>
+
+
+		<cite>info by haberler.com web site</cite>
+
+		<code> Centering the div is so important u can simply use this <br>
+			&lt;div align="center" class="col-md-12"&gt;
+		 </code>
+
+		 <h1>Coloring</h1>
+		<hr>
+		<p class="text-muted bg-success" >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo</p>
+		<p class="text-primary bg-warning">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo</p>
+		<p class="text-success bg-danger">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo</p>
+		<p class="text-warning bg-primary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo</p>
+		<p class="text-danger bg-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo</p>
+		<p class="text-info bg-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo</p>
+		<p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo</p>
+
+		<h1>Responsive Framing </h1>
+		<hr>
+
+		<div class="embed-responsive embed-responsive-16by9 border border-primary">
+			<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/R9AHAqu_bis"></iframe>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="embed-responsive embed-responsive-4by3 col-md-5 rcorners2">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/R9AHAqu_bis"></iframe>
+			</div>
+			<div class="rcorners1 col-md-5 ml-4">
+			<h4>Joseph Henimex</h4>
+			<p><small><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut lid est laborum.</em></small></p>
+			<p class="text-right"><strong>Lorem ipsum yugaru</strong></p>
+		</div>
+		</div>
+
+		<hr>
+		<h3>Resimler</h3>
+
+		<!--  responsive olması icin fluid -->
+		<div class="row">
+			<img class="container-fluid" src="https://www.mediaclick.com.tr/uploads/2020/05/lorem-ipsum.png">
+		</div>
+
+		<div class="row">
+			1
+			<img class="thumbs" src="https://www.mediaclick.com.tr/uploads/2020/05/lorem-ipsum.png">
+			<img class="img-thumbnail" style="width:250px" src="https://www.mediaclick.com.tr/uploads/2020/05/lorem-ipsum.png">
+		</div>
+
+		<div class="row">
+			2
+			<img class="float-right" style="width:350px" src="https://www.mediaclick.com.tr/uploads/2020/05/lorem-ipsum.png">
+		</div>
+
+		<div class="row">
+			3
+			<img class="float-left" style="width:250px" src="https://www.mediaclick.com.tr/uploads/2020/05/lorem-ipsum.png">
+		</div>
+
+		<div class="row">
+			4
+			<img class="mx-auto d-block" style="width:250px" src="https://www.mediaclick.com.tr/uploads/2020/05/lorem-ipsum.png">
+		</div>
+		
+		<div class="row">
+			<img width="250" class="img-fluid rounded-circle" src="https://www.mediaclick.com.tr/uploads/2020/05/lorem-ipsum.png">
+			<img width="250" class="img-fluid rounded-top" src="https://www.mediaclick.com.tr/uploads/2020/05/lorem-ipsum.png">
+		</div>
+		
+
+		<hr>
+		<h3>Figürler</h3>
+
+		
+
+		
+
+	</div>
+		
+	
+	
+	<br><br><br><br><br>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<script> $('[data-toggle="tooltip"]').tooltip(); </script>
+</body>
+</html>
