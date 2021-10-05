@@ -66,6 +66,15 @@
 			border-radius: 15px;
 			border: 5px solid purple;
 		}
+		.grey{
+			background-color: grey;
+			height: 100px;
+			margin-bottom: 20px;
+		}
+		.yellow{
+			background-color: yellow;
+			height: 300px;
+		}
 	</style>
 
 
@@ -250,9 +259,70 @@
 		
 
 		<hr>
-		<h3>Figürler</h3>
+		<h3>Flexbox</h3>
 
-		
+		<div class="d-flex flex-row">
+			<div class="p-4 grey">flex-row1</div>
+			<div class="p-4 grey">flex-row2</div>
+			<div class="p-4 grey">flex-row3</div>
+			<div class="p-4 grey">flex-row4</div>
+		</div>
+
+		<div class="d-flex flex-row-reverse">
+			<div class="p-4 grey">flex-row-reverse1</div>
+			<div class="p-4 grey">flex-row-reverse2</div>
+			<div class="p-4 grey">flex-row-reverse3</div>
+			<div class="p-4 grey">flex-row-reverse4</div>
+		</div>
+
+		<div class="d-flex flex-row justify-content-start">
+			<div class="p-4 grey">justify-content-start1</div>
+			<div class="p-4 grey">justify-content-start2</div>
+			<div class="p-4 grey">justify-content-start3</div>
+			<div class="p-4 grey">justify-content-start4</div>
+		</div>
+
+		<div class="d-flex flex-row justify-content-end">
+			<div class="p-4 grey">justify-content-end1</div>
+			<div class="p-4 grey">justify-content-end2</div>
+			<div class="p-4 grey">justify-content-end3</div>
+			<div class="p-4 grey">justify-content-end4</div>
+		</div>
+
+		<div class="d-flex flex-row justify-content-center">
+			<div class="p-4 grey">justify-content-center</div>
+			<div class="p-4 grey">justify-content-center</div>
+			<div class="p-4 grey">justify-content-center</div>
+			<div class="p-4 grey">justify-content-center</div>
+		</div>
+
+		<div class="d-flex flex-row justify-content-around">
+			<div class="p-4 grey">justify-content-around</div>
+			<div class="p-4 grey">justify-content-around</div>
+			<div class="p-4 grey">justify-content-around</div>
+			<div class="p-4 grey">justify-content-around</div>
+		</div>
+
+		<div class="d-flex flex-row justify-content-between">
+			<div class="p-4 grey">justify-content-between</div>
+			<div class="p-4 grey">justify-content-between</div>
+			<div class="p-4 grey">justify-content-between</div>
+			<div class="p-4 grey">justify-content-between</div>
+		</div>
+
+		<div class="yellow d-flex flex-row align-items-end">
+			<div class="p-4 grey">d-flex flex-row align-items-start</div>
+			<div class="p-4 grey">d-flex flex-row align-items-end</div>
+			<div class="p-4 grey">d-flex flex-row align-items-center</div>
+			<div class="p-4 grey">d-flex flex-row align-items-end</div>
+		</div>
+
+		<div class="yellow d-flex flex-row">
+			<div class="p-4 grey align-self-start">align-self-start</div>
+			<div class="p-4 grey align-self-center">align-self-center</div>
+			<div class="p-4 grey align-self-end">align-self-end</div>
+			<div class="p-4 grey align-self-baseline">align-self-baseline</div>
+		</div>
 
 		
 
