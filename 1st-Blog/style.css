@@ -1,0 +1,9 @@
+.card ul a{
+	text-decoration: none;
+	color: black;
+}
+
+.blurr{
+	  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
