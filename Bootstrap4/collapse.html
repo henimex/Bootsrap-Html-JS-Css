@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bootstrap Collapse</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/b8e9da0aef.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style type="text/css">
+	.ita{
+		font-style: italic;
+	}
+	a{
+		color: darkred;
+		font-style: italic;
+		font-family: monospace;
+		font-size: 16px;
+	}
+
+</style>
+
+</head>
+<body>
+	<div class="container mt-5">
+
+		<button type="button" class="btn btn-warning" data-target="#openSection1" data-toggle="collapse"> Open Collapse Content</button>
+
+		<button type="button" class="btn btn-warning" data-target="#openSection2" data-toggle="collapse"> Open Collapse Content</button>
+
+		<div class="collapse" id="openSection1">
+			<p>1Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut assumenda soluta recusandae accusamus eius consequuntur error, qui, neque deleniti explicabo est, facilis? Officia perferendis necessitatibus ullam voluptates cupiditate unde rerum.</p>
+		</div>
+
+		<div class="collapse" id="openSection2">
+			<p>2Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut assumenda soluta recusandae accusamus eius consequuntur error, qui, neque deleniti explicabo est, facilis? Officia perferendis necessitatibus ullam voluptates cupiditate unde rerum.</p>
+		</div>
+
+		<hr>
+
+		<div id="acoridon">
+
+			<div class="card">
+				<div class="card-header">
+					<h5><a data-toggle="collapse" href="#open1"><strong>Q: </strong> How can I Register</a></h5>
+				</div>
+
+				<div id="open1" class="collapse">
+					<div class="card-body">
+						<div class="card-title"><strong>Registering</strong></div>
+						<div class="card-text"><p><strong>A: </strong>  1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dolor ratione, quasi libero tempore voluptatem, veniam vero veritatis repudiandae, accusamus ipsum reiciendis eius deserunt natus nesciunt consectetur reprehenderit illum aliquam?</p></div>
+					</div>
+					<div class="card-footer">Short Information</div>
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-header">
+					<h5><a data-toggle="collapse" href="#open2"><strong>Q: </strong> I Forgot my Password</a></h5>
+				</div>
+
+				<div id="open2" class="collapse">
+					<div class="card-body">
+						<div class="card-title"><strong>Forgotten Password</strong></div>
+						<div class="card-text"><p><strong>A: </strong> 2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dolor ratione, quasi libero tempore voluptatem, veniam vero veritatis repudiandae, accusamus ipsum reiciendis eius deserunt natus nesciunt consectetur reprehenderit illum aliquam?</p></div>
+					</div>
+					<div class="card-footer">Short Information</div>
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-header">
+					<h5><a data-toggle="collapse" href="#open3"><strong>Q: </strong> Disable Stop Account</a></h5>
+				</div>
+
+				<div id="open3" class="collapse">
+					<div class="card-body">
+						<div class="card-title"><strong>Disabling Account</strong></div>
+						<div class="card-text"><p> <strong>A: </strong> 3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dolor ratione, quasi libero tempore voluptatem, veniam vero veritatis repudiandae, accusamus ipsum reiciendis eius deserunt natus nesciunt consectetur reprehenderit illum aliquam?</p></div>
+					</div>
+					<div class="card-footer">Short Information</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="container mt-4">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="#">HomePage</a></li>
+				<li class="breadcrumb-item"><a href="#">Register</a></li>
+				<li class="breadcrumb-item"><a href="#">User Register</a></li>
+				<li class="breadcrumb-item"><a>Profile</a></li>
+			</ol>
+		</div>
+		<br><br><br><br><br><br><br><br><br>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+		<script> $('[data-toggle="tooltip"]').tooltip(); </script>
+	</body>
+	</html>

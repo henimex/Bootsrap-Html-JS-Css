@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bootstrap Modal</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/b8e9da0aef.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+
+	<div class="container mt-3" data-spy="scroll" id="go2">
+
+		<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal1">Open Modal</button>
+
+		<div class="modal fade" id="modal1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalLabel">User Agreement</h5>
+						<button type="button" class="close" data-dismiss="modal">
+							<span>&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate odio ut, voluptatibus atque minus molestiae, ipsam error temporibus perferendis, suscipit dicta amet. Incidunt ullam optio libero laboriosam molestiae iure tempora.
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis cum cupiditate, fugiat tempora molestiae exercitationem veniam quidem fugit, quaerat, iure laudantium corporis totam illum veritatis placeat sit, culpa recusandae a.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" class="close" data-dismiss="modal">Cancel</button>
+						<button type="button" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#modal2">Agree</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal2">Open Modal</button>
+
+		<div class="modal fade" id="modal2">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalLabel">Simple Modal</h5>
+						<button type="button" class="close" data-dismiss="modal">
+							<span>&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="" class="form-control-label">Name</label>
+							<input type="text" class="form-control">
+							<label for="" class="form-control-label">Surname</label>
+							<input type="text" class="form-control">
+							<label for="" class="form-control-label">e-mail</label>
+							<input type="text" class="form-control">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" class="close" data-dismiss="modal">Cancel</button>
+						<button type="button" class="btn btn-success">Save</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<a href="#go1">Go to Section 1</a>
+	</div>
+
+	<div class="container" align="center">
+		<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="bottom" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">Show Tooltip</button>
+
+		<button type="button" class="btn btn-dark" data-toggle="popover" data-placement="bottom" data-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">Information</button>
+	</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<div class="container">
+		<hr>
+		
+
+		<div data-spy="scroll">
+			<div id="go1">
+				<strong>Section 1</strong>
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, nam voluptates corrupti earum possimus totam fugit deserunt recusandae asperiores dolores vero similique illum maxime facere hic perferendis id quis? Odio?
+
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus dolor pariatur esse eius reprehenderit quo, ab ducimus, reiciendis aspernatur soluta veniam voluptatum hic eligendi accusamus? Fuga cum ad facilis dolor. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</div>
+		<a href="#go2">Go Top</a>
+	</div>
+
+
+	<br><br><br><br><br><br><br><br><br>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<script> $('[data-toggle="tooltip"]').tooltip(); </script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#modal1").modal('show')
+		});
+	</script>
+	<script>
+		$(document).ready(function(){
+			$('[data-toggle="popover"]').popover()
+		});
+	</script>
+
+</body>
+</html>
