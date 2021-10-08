@@ -116,36 +116,74 @@
 
 //String Metodları
 
-const firstName = "Jospeh";
-const lastName = "HenimeX";
-const age = 35;
+// const firstName = "Jospeh";
+// const lastName = "HenimeX";
+// const age = 35;
+// let hobbies = "sinema,spor,kitap,yazilim";
 
-let val;
+// let val;
 
-val = firstName + " " + lastName;
-val = "Ferhat";
-val += " Henimex";
+// val = firstName + " " + lastName;
+// val = "Ferhat";
+// val += " Henimex";
 
-val1 =
-  "My Name is : " +
-  firstName +
-  " " +
-  lastName +
-  " and my age " +
-  age +
-  " Eskişehir'de yaşıyorum";
+// val1 =
+//   "My Name is : " +
+//   firstName +
+//   " " +
+//   lastName +
+//   " and my age " +
+//   age +
+//   " Eskişehir'de yaşıyorum";
 
-val = firstName.concat(" ", lastName);
-//val = val.length;
-val = val.toUpperCase();
-val = val.toLowerCase();
+// val = firstName.concat(" ", lastName);
+// //val = val.length;
+// val = val.toUpperCase();
+// val = val.toLowerCase();
 
-val = val1[0];
+// val = val1[0];
 
-val = val1.indexOf("X");
-val = val1.substring(0,10);
+// val = val1.indexOf("X");
+// val = val1.substring(0, 10);
 
-val = val1.substring(val1.indexOf("H"),6)
+// val = val1.substring(val1.indexOf("H"), 6);
+// val = val1.slice(10);
 
-console.log(val);
-console.log(typeof val);
+// val = val1.replace("HenimeX", "Shenimex");
+// val = hobbies.split(',');
+
+// console.log(val);
+// console.log(typeof val);
+
+//String Ornekleri
+
+var sentence =
+  "   Template Literals or template strings is the ability Have multi-line string without any funny business.   ";
+var url = "http://sadikturan.com/ModernJavascipt KURSU sıfırdan ileri seviye";
+
+console.log(sentence.length);
+console.log(sentence.toLocaleLowerCase());
+console.log(sentence.trim());
+console.log(sentence.trim().split(" ").length);
+console.log(sentence.replace("-", ""));
+
+console.log(url.substring(url.indexOf("/") + 2));
+console.log(url.substring(0, url.indexOf(":")));
+console.log(url.startsWith('http'));
+
+console.log(url.split(" ").length);
+console.log(
+  url.replace('Javascipt','JavaScript')
+  .replaceAll(' ','/')
+  .toLocaleLowerCase()+'.html'
+  );
+
+  console.log(
+    url.replace('Javascipt','JavaScript')
+    .replace(/ /g,'-')
+    .replace(/ı/g,'i' )
+    .toLocaleLowerCase()+'.html'
+    );
+
+console.log("Link Com İçeriyor mu ? " , url.indexOf('.com'))
+
