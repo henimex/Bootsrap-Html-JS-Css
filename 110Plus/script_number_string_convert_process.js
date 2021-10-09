@@ -293,3 +293,555 @@ console.log(students);
 console.log(students[0][0])
 console.log(students[0][1])
 console.log(students[0][2])
+
+
+// // if else
+
+const firstName = "Sena";
+const age = 22;
+const isStudent = true;
+const school = "University";
+const id = 26;
+
+if (firstName === "Sena") {
+  console.log("Merhaba Sena");
+}
+
+if (age > 18) {
+  console.log("Adult");
+} else {
+  console.log("Not Adult");
+}
+
+if (typeof id !== "undefined") {
+  console.log(`ID : ${id}`);
+} else {
+  console.log("id is not defined");
+}
+
+// // Switch
+
+let category = "telefon";
+
+switch (category) {
+  case "telefon":
+    console.log("telefon kagetorisi");
+    break;
+
+  case "bilgisayar":
+    console.log("bilgisayar kagetorisi");
+    break;
+
+  default:
+    console.log("takipsiz kategori");
+    break;
+}
+
+let day;
+let work;
+
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+    day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+    break;
+
+  default:
+    day = "Welcome to Hell";
+    break;
+}
+
+switch (new Date().getDay()) {
+  case 0:
+  case 6:
+    work = "No working today. Its weekend";
+    break;
+
+  case 1:
+  case 2:
+  case 3:
+  case 4:
+    work = "Keep working. Its work week";
+    break;
+
+  default:
+    work = "You probably Dead.";
+    break;
+}
+
+switch (true) {
+  case age >= 12 && age < 18:
+    console.log(`1 ${firstName} A1 ve A2 grubu sürücü olabilir`);
+    break;
+
+  case age >= 18 && age <= 25:
+    console.log(`2 ${firstName} A B ve C grubu sürücü olabilir`);
+    break;
+
+  case age > 25 && age <= 55:
+    console.log(`3 ${firstName} A B C D E F G grubu sürücü olabilir`);
+    break;
+  case age >= 56 && age < 65:
+    console.log(`4 ${firstName} Doktor raporu ile B grubu sürücü olabilir`);
+    break;
+  case age >= 65:
+    console.log(`5 ${firstName} Sürücü olabilme yaşı üstündesiniz.`);
+    break;
+
+  default:
+    console.log(`0 ${firstName} ehliyet alabilecek yaşa henüz ulaşılmamış`);
+    break;
+}
+
+console.log(`Today is : ${day}`);
+console.log(`Work Staatus : ${work}`);
+
+//Odev
+
+let carExit = new Date("10/01/2021");
+carExit.setHours(0, 0, 0, 0);
+let today = Date.now();
+let useTimeMS = Date.now() - carExit.getTime();
+let useTime = new Date(useTimeMS);
+let useTimeDay = useTimeMS / (1000 * 60 * 60 * 24);
+let useTimeYear = useTime.getFullYear() - 1970;
+let maintainceYear;
+let maintaince;
+
+switch (true) {
+  case useTimeDay >= 365 && useTimeDay < 365 * 2:
+    maintainceYear = 1;
+    break;
+  case useTimeDay >= 365 * 2 && useTimeDay < 365 * 3:
+    maintainceYear = 2;
+    break;
+  case useTimeDay >= 365 * 3 && useTimeDay < 365 * 4:
+    maintainceYear = 3;
+    break;
+  case useTimeDay >= 365 * 4 && useTimeDay < 365 * 5:
+    maintainceYear = 4;
+    break;
+  case useTimeDay >= 365 * 5 && useTimeDay < 365 * 6:
+    maintainceYear = 5;
+    break;
+
+  case useTimeDay <= 5:
+    maintaince =
+      "1 Yıl yada 15.000 KM kadar bakım yaptırmanıza gerek yoktur " +
+      useTimeDay;
+    break;
+
+  case useTimeDay >= 365 * 15:
+    maintaince = "Aracı Değiştiriniz. " + useTimeDay;
+    break;
+
+  default:
+    maintaince = "Bakım Süreniz Henüz Gelmemiş " + useTimeDay;
+    break;
+}
+maintaince ? console.log(maintaince) : null;
+maintainceYear
+  ? console.log(
+      `${maintainceYear} Yıllık Bakım Süresi Gelmiştir. " + ${useTimeDay}`
+    )
+  : null;
+
+let userName = "Admin";
+let password = "TheMaster";
+
+function login(id, pw) {
+  console.log("Please Enter ID and PW");
+  if (id !== null) {
+    if (id === "admin" && pw === "TheMaster") {
+      console.log("Welcome!");
+    } else if (id === "admin" && pw !== "TheMaster") {
+      console.log(`Sorry ${id} ${pw} is wrong`);
+      console.log(`Wrong Password`);
+    } else if (id !== "admin") {
+      console.log("I Dont Know You");
+      return;
+    } else {
+      console.log("Login Cancelled");
+    }
+  } else {
+    console.log("Cancelled");
+    return;
+  }
+}
+
+function loginv2(id, pw) {
+  var id = prompt("Who's there?");
+  var pw;
+  if (id !== null) {
+    if (id === userName) {
+      pw = prompt("Password?");
+      if (pw !== null) {
+        if (pw == password) {
+          console.log("Welcome!");
+        } else if (pw !== password) {
+          console.log("Wrong Password");
+        }
+      } else {
+        console.log("Canceled.");
+        return;
+      }
+    } else if (id !== userName) {
+      console.log("I don't know you");
+    }
+  } else {
+    console.log("Canceled.");
+    return;
+  }
+}
+
+loginv2();
+
+// Object Literals
+
+let val;
+
+let person = {
+  firstName: "Esila",
+  lastName: "Oygur",
+  age: 13,
+  hobbies: ["Kitap Okumak", "Müzik Dinlemek", "Film İzlemek"],
+  adress: {
+    city: "Eskişehir",
+    country: "Türkiye",
+  },
+
+  getBirthday: function () {
+    return new Date(Date.now()).getFullYear() - this.age;
+  },
+};
+
+let people = [
+  {
+    firstName: "Ali Alp",
+    lastName: "Oygur",
+    age: 4,
+    hobbies: ["Kitap Okumak", "Müzik Dinlemek", "Film İzlemek"],
+    adress: {
+      city: "Eskişehir",
+      country: "Türkiye",
+    },
+
+    getBirthday: function () {
+      return new Date(Date.now()).getFullYear() - this.age;
+    },
+  },
+  {
+    firstName: "Dilek",
+    lastName: "Oygur",
+    age: 36,
+    hobbies: ["Temizlik", "Uyku", "Cep Telefonu"],
+    adress: {
+      city: "Eskişehir",
+      country: "Türkiye",
+    },
+
+    getBirthday: function () {
+      return new Date(Date.now()).getFullYear() - this.age;
+    },
+  },
+  {
+    firstName: "Ferhat",
+    lastName: "Oygur",
+    age: 37,
+    hobbies: ["Yazılım", "Uzay", "Oyun"],
+    adress: {
+      city: "Eskişehir",
+      country: "Türkiye",
+    },
+
+    getBirthday: function () {
+      return new Date(Date.now()).getFullYear() - this.age;
+    },
+  },
+];
+
+val = person.adress.city;
+
+for (let i = 0; i < people.length; i++) {
+    console.log(people[i]);
+}
+
+people.forEach(element => {
+    console.log(element.firstName)
+});
+
+console.log(people)
+console.log(person)
+console.log(typeof people)
+console.log(typeof person)
+
+// Object Literals App
+
+var aracBilgileri = [
+  {
+    id: "bmw116d_123",
+    model: "bmw 116d",
+    yil: 2015,
+    renk: "Beyaz",
+    servisKayitlari: [
+      {
+        id: this.id + "_1",
+        tarih: "20.01.2016",
+        km: "13000",
+        ucret: 900,
+        detay: [
+          {
+            id: "bmw116d_123_1",
+            aciklama: "yag degisimi",
+            ucret: 300,
+          },
+          {
+            id: "bmw116d_123_2",
+            aciklama: "filtre degisimi",
+            ucret: 300,
+          },
+          {
+            id: "bmw116d_123_3",
+            aciklama: "hidrolik degisimi",
+            ucret: 300,
+          },
+        ],
+      },
+      {
+        id: this.id + "_2",
+        tarih: "10.01.2017",
+        km: "28000",
+        ucret: 1800,
+        detay: [
+          {
+            id: "bmw116d_123_2_1",
+            aciklama: "cam degisimi",
+            ucret: 600,
+          },
+          {
+            id: "bmw116d_123_2_2",
+            aciklama: "benzin pompası degisimi",
+            ucret: 500,
+          },
+          {
+            id: "bmw116d_123_2_3",
+            aciklama: "kışlık lastik degisimi",
+            ucret: 300,
+          },
+          {
+            id: "bmw116d_123_2_4",
+            aciklama: "baskı balata degisimi",
+            ucret: 400,
+          },
+        ],
+      },
+      {
+        id: this.id + "_3",
+        tarih: "15.01.2018",
+        km: "13000",
+        ucret: 600,
+        detay: [
+          {
+            id: "bmw116d_123_3_1",
+            aciklama: "hava filtresi degisimi",
+            ucret: 150,
+          },
+          {
+            id:  "bmw116d_123_3_2",
+            aciklama: "kapı kolu degisimi",
+            ucret: 200,
+          },
+          {
+            id:  "bmw116d_123_3_3",
+            aciklama: "koltuk kılfı takıldı",
+            ucret: 250,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "ww_p_16_555",
+    model: "wolkswagen",
+    yil: 2001,
+    renk: "Gri",
+    servisKayitlari: [
+      {
+        id: this.id + "_1",
+        tarih: "20.01.2016",
+        km: "13000",
+        ucret: 600,
+        detay: [
+          {
+            id:  "ww_p_16_555_1_1",
+            aciklama: "yag degisimi",
+            ucret: 100,
+          },
+          {
+            id:  "ww_p_16_555_1_2",
+            aciklama: "filtre degisimi",
+            ucret: 100,
+          },
+          {
+            id: "ww_p_16_555_1_3",
+            aciklama: "hidrolik degisimi",
+            ucret: 100,
+          },
+        ],
+      },
+      {
+        id: this.id + "_2",
+        tarih: "10.01.2017",
+        km: "28000",
+        ucret: 1800,
+        detay: [
+          {
+            id: "ww_p_16_555_2_1",
+            aciklama: "cam degisimi",
+            ucret: 600,
+          },
+          {
+            id:"w_p_16_555_2_2",
+            aciklama: "benzin pompası degisimi",
+            ucret: 500,
+          },
+          {
+            id:  "w_p_16_555_2_3",
+            aciklama: "kışlık lastik degisimi",
+            ucret: 300,
+          },
+          {
+            id: "w_p_16_555_2_4",
+            aciklama: "baskı balata degisimi",
+            ucret: 400,
+          },
+        ],
+      },
+      {
+        id: this.id + "_3",
+        tarih: "15.01.2018",
+        km: "13000",
+        ucret: 600,
+        detay: [
+          {
+            id:  "w_p_16_555_3_1",
+            aciklama: "hava filtresi degisimi",
+            ucret: 150,
+          },
+          {
+            id:  "w_p_16_555_3_2",
+            aciklama: "kapı kolu degisimi",
+            ucret: 200,
+          },
+          {
+            id:  "w_p_16_555_3_3",
+            aciklama: "koltuk kılfı takıldı",
+            ucret: 250,
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "opelastra01_123",
+    model: "opel_astra 116d",
+    yil: 2005,
+    renk: "Mavi",
+    servisKayitlari: [
+      {
+        id: this.id + "_1",
+        tarih: "20.01.2016",
+        km: "13000",
+        ucret: 900,
+        detay: [
+          {
+            id: "w_p_16_555_4_1",
+            aciklama: "yag degisimi",
+            ucret: 300,
+          },
+          {
+            id: "w_p_16_555_4_2",
+            aciklama: "filtre degisimi",
+            ucret: 300,
+          },
+          {
+            id: "w_p_16_555_4_3",
+            aciklama: "hidrolik degisimi",
+            ucret: 300,
+          },
+        ],
+      },
+      {
+        id: this.id + "_2",
+        tarih: "10.01.2017",
+        km: "28000",
+        ucret: 1800,
+        detay: [
+          {
+            id: "w_p_16_555_5_1",
+            aciklama: "cam degisimi",
+            ucret: 600,
+          },
+          {
+            id: "w_p_16_555_5_2",
+            aciklama: "benzin pompası degisimi",
+            ucret: 500,
+          },
+          {
+            id: "w_p_16_555_5_3",
+            aciklama: "kışlık lastik degisimi",
+            ucret: 300,
+          },
+          {
+            id: "w_p_16_555_5_4",
+            aciklama: "baskı balata degisimi",
+            ucret: 400,
+          },
+        ],
+      },
+      {
+        id: this.id + "_3",
+        tarih: "15.01.2018",
+        km: "13000",
+        ucret: 600,
+        detay: [
+          {
+            id: "w_p_16_555_4_1",
+            aciklama: "hava filtresi degisimi",
+            ucret: 150,
+          },
+          {
+            id: "w_p_16_555_4_2",
+            aciklama: "kapı kolu degisimi",
+            ucret: 200,
+          },
+          {
+            id: "w_p_16_555_4_3",
+            aciklama: "koltuk kılfı takıldı",
+            ucret: 250,
+          },
+        ],
+      },
+    ],
+  },
+];
+console.log("trest")
+console.log(aracBilgileri)
