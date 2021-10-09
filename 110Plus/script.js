@@ -70,9 +70,9 @@ var hesapB = { ad: "Dilek", hesapNo: "4561561", bakiye: 5000, ekHesap: 10000 };
 var hesapc = { ad: "Esila", hesapNo: "2474418", bakiye: 300, ekHesap: 0 };
 
 function paraCek(hesap, miktar) {
-  console.log(`Merhaba ${hesap.ad}`);
+  console.log(`Merhaba ${hesap.ad}. ${hesap.hesapNo} nolu hesap için işlem yapıalcaktır.`);
   if (hesap.bakiye >= miktar) {
-    hesap.bakiye -= miktar;
+    hesap.bakiye = hesap.bakiye - miktar;
     console.log(
       `Çekilmek İstenen Tutar : ${miktar} Bakiye : ${
         hesap.bakiye
@@ -86,10 +86,11 @@ function paraCek(hesap, miktar) {
     );
     var toplam = hesap.bakiye + hesap.ekHesap;
     if (toplam >= miktar) {
-      var secim = prompt(
+      var secim = confirm(
         "Kalan Tutarı Ek Hesabınızdan Kullanmak İstermisiniz."
       );
-      if (secim == "E" || secim == "e") {
+      console.log(secim)
+      if (secim) {
         kalan = miktar - hesap.bakiye;
         hesap.bakiye = 0;
         hesap.ekHesap = hesap.ekHesap - kalan;
@@ -99,7 +100,7 @@ function paraCek(hesap, miktar) {
         console.log(
           `Rapor : \n Bakiye : 0 TL \n Ek Hesap : ${hesap.ekHesap} TL dir.`
         );
-      } else if (secim == "H" || secim == "h") {
+      } else if (!secim) {
         console.log(
           `Bakiyeniz : ${hesap.bakiye} TL \n Ek Hesabınız : ${hesap.ekHesap} TL dir. Çekme işlemi iptal edildi. iyi günler dileriz.`
         );
@@ -113,6 +114,6 @@ function paraCek(hesap, miktar) {
   }
 }
 
-paraCek(hesapA, 500);
-paraCek(hesapA, 2000);
+paraCek(hesapA, 2500);
+paraCek(hesapA, 2500);
 paraCek(hesapA, 1000);
