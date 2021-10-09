@@ -199,3 +199,97 @@ val = `my name is ${fullName} ${ 2021-birthday} years old and I Live in ${city}.
 
 console.log(val)
 console.log(typeof val)
+
+// Arrays Important Like Hell
+
+let names = ["çınar", "sena", "ada", "yigit"];
+let years = [2017, 1999, 2012, 2010];
+let mix = [
+  "test",
+  "name",
+  1983,
+  null,
+  undefined,
+  ["sinema", "kitap okumak"],
+  666,
+];
+
+names[0] = "ahmet";
+names[6] = "cem";
+names[names.length] = "ferhat";
+
+years.push(1986);
+years.unshift(1987);
+mix.pop(); // Son elemanı siler
+mix.shift(); // ilk elemanı siler
+names.reverse(); //ters çevirme
+years.sort();
+let index = names.indexOf("ada");
+let val = years.concat(names);
+
+names.splice(2, 0, "seda"); //ikinci indexten sonra 0 eleman sil sonra 'seda' elemanını ekle
+
+console.log(val)
+console.log("Index : " + index);
+console.log(names[0]);
+console.log(typeof names);
+console.log(years);
+console.log(mix);
+
+function over18(year) {
+  let age = 2021 - year;
+  return age >= 18;
+}
+
+let val3 = years.filter(over18)
+let val2 = years.find(over18)
+console.log(val2);
+console.log(val3);
+
+console.log(over18(2010));
+
+console.log(names);
+
+// Array Odev
+
+let brands = ["Bmw", "Mercedes", "Opel", "Mazda"];
+let numbers = [11, 2, 99, 5, 6, 24, 16];
+var str = "Chavrolet,Dacia";
+var strArr = str.split(",");
+let val = numbers.sort((a, b) => a - b);
+
+console.log(brands.length);
+console.log(brands[0]);
+console.log(brands[brands.length - 1]);
+
+brands[brands.length] = "Renault"; //dizinin index numarasına göre ekleme
+brands.splice(0, 0, "Toyota"); //yer degistirme indexten sonra ekleme yada silme 0. indexten sonra 1. indexi sil gonderileni ekle
+brands.push("Fiat"); //standart ekleme
+brands.unshift("Wolkswagen"); // en basa ekleme
+brands.reverse();
+
+brands.pop(); //son indexi silme
+brands.shift(); // bas indexi silme
+let newList = brands.concat(strArr);
+console.log(newList.splice(newList.length - 3, 2));
+console.log(newList.slice(6, 8)); //yazılan degerler arasını alır. 6 ve 7 gelir 8 almaz
+
+console.log(brands.sort());
+console.log("unordered " + numbers);
+console.log("ordered numbers " + val);
+console.log(brands.includes("Opel"));
+console.log(strArr);
+console.log(brands);
+console.log(newList);
+
+stdA = ["Esila", "Oygur", 2009];
+stdB = ["Ali Alp", "Oygur", 2016];
+stdC = ["Dilek", "Oygur", 1984];
+
+students = [stdA, stdB, stdC];
+
+console.log(students);
+
+console.log(students[0][0])
+console.log(students[0][1])
+console.log(students[0][2])
