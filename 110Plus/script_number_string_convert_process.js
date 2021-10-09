@@ -845,3 +845,113 @@ var aracBilgileri = [
 ];
 console.log("trest")
 console.log(aracBilgileri)
+
+//Loops
+
+for (let i = 1; i < 10; i++) {
+  console.log("Döngü Başı");
+  if (i == 3) {
+    console.log("Fav Numebr is : " + i);
+    continue;
+  }
+
+  if (i == 6) {
+    console.log("Bad Number " + i, " Breaked");
+    break;
+  }
+  console.log(i);
+  console.log("Döngü Sonu");
+  console.log(":::::::::::");
+}
+
+for (let i = 10; i >= 0; i--) {
+  console.log(i);
+}
+
+let val = "\n";
+for (let i = 0; i < 10; i++) {
+  for (let j = 0; j < 10; j++) {
+    console.log(`i : ${i} j : ${j}`);
+    val += "* ";
+  }
+  val += "\n";
+}
+
+console.log(val);
+
+let cars = ["Bmw", "Mercedes", "Toyota"];
+let people = [
+  { firstName: "JK", lastName: "Pole" },
+  { firstName: "Jack", lastName: "Holie" },
+  { firstName: "Ken", lastName: "Martin" },
+];
+
+for (let i = 0; i < cars.length; i++) {
+  console.log("Araba : ", cars[i]);
+}
+
+//ForIn
+for (const key in cars) {
+  if (Object.hasOwnProperty.call(cars, key)) {
+    const element = cars[key];
+    console.log(`${key} ${element}`);
+    console.log(
+      "Arasında ki farkı cok analayamadım ama burda key yada i degeri index numarasını donuyor."
+    );
+    console.log("Boş olan fomr arrayde denenebilir.");
+  }
+}
+
+// For Of
+for (const iterator of people) {
+  console.log("iterator ", iterator.firstName);
+}
+
+cars.forEach(function (item) {
+  console.log("ForEach ", item);
+});
+
+// Map
+
+let mapVal = people.map(function (person) {
+  console.log("Awesome");
+  return person.firstName + " " + person.lastName;
+});
+
+console.log("Map ", mapVal);
+
+let numbers = [1, 5, 6, 8, 10];
+
+let num = numbers.map(function (n) {
+  return n * n;
+});
+5;
+
+console.log(num);
+
+//Demolar
+
+randomNumber = Math.floor(Math.random() * 10 + 1);
+console.log(randomNumber);
+var left = 5;
+var guess;
+var counter = 0;
+var challange = Number(prompt("Kac Defada Bileceksiniz."));
+
+while (left > 0) {
+  left--;
+  counter++;
+  guess = Number(prompt("bir sayı giriniz."));
+  if (randomNumber == guess) {
+    console.log(`Tebrikler ${counter} defada Bildiniz`);
+    console.log(`Puan : ${100 - (100 / challange) * (counter - 1)}`);
+    break;
+  } else if (randomNumber < guess) {
+    console.log("Aşağı");
+  } else {
+    console.log("Yukarı");
+  }
+  if (left == 0) {
+    console.log("Hakkınız Bitti.");
+  }
+}

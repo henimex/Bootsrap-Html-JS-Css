@@ -1,64 +1,118 @@
-//Loops
+//Functions
 
-for (let i = 1; i < 10; i++) {
-  console.log("Döngü Başı");
-  if (i == 3) {
-    console.log("Fav Numebr is : " + i);
-    continue;
-  }
-
-  if (i == 6) {
-    console.log("Bad Number " + i, " Breaked");
-    break;
-  }
-  console.log(i);
-  console.log("Döngü Sonu");
-  console.log(":::::::::::");
+function yasHesapla(dogumYili) {
+  return 2021 - dogumYili;
 }
 
-for (let i = 10; i >= 0; i--) {
-  console.log(i);
-}
+function emeklilikHesapla(dogumYili, isim) {
+  let yas = yasHesapla(dogumYili);
+  let emeklilik = 65 - yas;
 
-let val = "\n";
-for (let i = 0; i < 10; i++) {
-  for (let j = 0; j < 10; j++) {
-    console.log(`i : ${i} j : ${j}`);
-    val += "* ";
+  if (emeklilik > 0) {
+    console.log(`Sayın ${isim}; Emekli Olmanıza ${emeklilik} yıl kaldı`);
+  } else {
+    console.log(
+      `Emekliliği yaş olarak hak etmiş bulunmaktasınız. Prim gün süreniz 160.000 doldurmus iseniz emekli olabilirsiniz.`
+    );
   }
-  val += "\n";
+  return emeklilik;
 }
 
+let val = yasHesapla(1983);
 console.log(val);
 
-let cars = ["Bmw", "Mercedes", "Toyota"];
-let people = [
-  { firstName: "JK", lastName: "Pole" },
-  { firstName: "Jack", lastName: "Holie" },
-  { firstName: "Ken", lastName: "Martin" },
-];
+emeklilikHesapla(1983, "Ferhat");
 
-for (let i = 0; i < cars.length; i++) {
-  console.log("Araba : ", cars[i]);
+//Function Declerations Expressions
+
+function sum(a, b) {
+  var c = a + b;
+  return c;
 }
 
-//ForIn
-for (const key in cars) {
-  if (Object.hasOwnProperty.call(cars, key)) {
-    const element = cars[key];
-    console.log(`${key} ${element}`);
+const sumDif = function (a, b) {
+  if (typeof a === "undefined") {
+    a = 0;
+  }
+
+  typeof b === "undefined" ? (b = 0) : false;
+
+  return a + b;
+};
+
+const sumDef = function (a = 0, b = 0) {
+  return a + b;
+};
+
+console.log(sum(10, 5));
+console.log(sumDif(10, 5));
+console.log(sumDef(20, 90));
+
+function argControl() {
+  console.log(arguments);
+}
+
+function sumAll() {
+  var total = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    total += arguments[i];
+  }
+  return total;
+}
+
+argControl(10, 50, "55", "ferhat");
+console.log(sumAll(10, 10, 5, 6, "ss"));
+
+// Demo
+
+var hesapA = { ad: "Ferhat", hesapNo: "1245451", bakiye: 2000, ekHesap: 1000 };
+var hesapB = { ad: "Dilek", hesapNo: "4561561", bakiye: 5000, ekHesap: 10000 };
+var hesapc = { ad: "Esila", hesapNo: "2474418", bakiye: 300, ekHesap: 0 };
+
+function paraCek(hesap, miktar) {
+  console.log(`Merhaba ${hesap.ad}`);
+  if (hesap.bakiye >= miktar) {
+    hesap.bakiye -= miktar;
     console.log(
-      "Arasında ki farkı cok analayamadım ama burda key yada i degeri index numarasını donuyor."
+      `Çekilmek İstenen Tutar : ${miktar} Bakiye : ${
+        hesap.bakiye
+      } paranızı alabilirsiniz.\n Hesap Bilgisi: ${
+        hesap.bakiye - miktar
+      } TL \n Ek Hesap : ${hesap.ekHesap}`
     );
-    console.log("Boş olan fomr arrayde denenebilir.");
+  } else {
+    console.log(
+      `Çekilmek İstenen Tutar : ${miktar} \n Bakiye : ${hesap.bakiye} Ek Hesap Kontrolü Yapılıyor...`
+    );
+    var toplam = hesap.bakiye + hesap.ekHesap;
+    if (toplam >= miktar) {
+      var secim = prompt(
+        "Kalan Tutarı Ek Hesabınızdan Kullanmak İstermisiniz."
+      );
+      if (secim == "E" || secim == "e") {
+        kalan = miktar - hesap.bakiye;
+        hesap.bakiye = 0;
+        hesap.ekHesap = hesap.ekHesap - kalan;
+        console.log(
+          `Bakiyenizden ${hesap.bakiye} TL Ek Hesabınızdan ise ${kalan} TL çekilmiştir.`
+        );
+        console.log(
+          `Rapor : \n Bakiye : 0 TL \n Ek Hesap : ${hesap.ekHesap} TL dir.`
+        );
+      } else if (secim == "H" || secim == "h") {
+        console.log(
+          `Bakiyeniz : ${hesap.bakiye} TL \n Ek Hesabınız : ${hesap.ekHesap} TL dir. Çekme işlemi iptal edildi. iyi günler dileriz.`
+        );
+      }
+    } else {
+      console.log(`Hesaplarınzda Yeterli bakiye bulunmamaktadır. \n 
+        Bakiye : ${hesap.bakiye} TL\n
+        Ek Hesap : ${hesap.ekHesap} TL \n
+        Çekilmek istenene Tutar : ${miktar} TL. İyi Günler Dileriz.`);
+    }
   }
 }
 
-// For Of
-for (const iterator of people) {
-  console.log("iterator ", iterator.firstName);
-}
-
-cars.forEach(function (item) {
-  console.log("ForEach ", item);
-});
+paraCek(hesapA, 500);
+paraCek(hesapA, 2000);
+paraCek(hesapA, 1000);
