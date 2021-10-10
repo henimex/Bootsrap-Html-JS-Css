@@ -4,8 +4,17 @@ const form = document.querySelector("form");
 const input = document.querySelector("#txtTaskName");
 const btnDeleteAll = document.querySelector("#btnDeleteAll");
 const taskList = document.querySelector("#task-list");
+const items = ["item 1", "item 2", "item 3", "item 4"];
 
 eventListeners();
+
+loadItems();
+
+function loadItems() {
+  items.forEach(function (item) {
+    createItem(item);
+  });
+}
 
 function eventListeners() {
   form.addEventListener("submit", addNewItem);
@@ -15,11 +24,7 @@ function eventListeners() {
 
 function addNewItem(e) {
   if (checkInput()) {
-    const li = createLi();
-    const a = createA();
-
-    li.appendChild(a);
-    taskList.appendChild(li);
+    createItem(input.value);
 
     input.value = "";
     e.preventDefault();
@@ -43,20 +48,27 @@ function createA() {
   return a;
 }
 
-function createLi() {
+function createLi(text) {
   const li = document.createElement("li");
   li.className = "list-group-item list-group-item-secondary";
-  li.appendChild(document.createTextNode(input.value));
+  li.appendChild(document.createTextNode(text));
   return li;
 }
 
+function createItem(text) {
+  const li = createLi(text);
+  const a = createA();
+
+  li.appendChild(a);
+  taskList.appendChild(li);
+}
+
 function deleteItem(e) {
-  if (confirm("Are you sure you want to delete")) {
-    if (e.target.className === "fas fa-times") {
+  if (e.target.className === "fas fa-times") {
+    if (confirm("Are you sure you want to delete")) {
       e.target.parentElement.parentElement.remove();
     }
   }
-
   e.preventDefault();
 }
 
