@@ -4,16 +4,32 @@ const form = document.querySelector("form");
 const input = document.querySelector("#txtTaskName");
 const btnDeleteAll = document.querySelector("#btnDeleteAll");
 const taskList = document.querySelector("#task-list");
-const items = ["item 1", "item 2", "item 3", "item 4"];
+let items = ["item 1", "item 2", "item 3", "item 4"];
 
 eventListeners();
 
 loadItems();
 
 function loadItems() {
+  items = getItemsFromLocalStorage();
   items.forEach(function (item) {
     createItem(item);
   });
+}
+
+function getItemsFromLocalStorage() {
+  if (localStorage.getItem("items") === null) {
+    items = [];
+  } else {
+    items = JSON.parse(localStorage.getItem("items"));
+  }
+  return items;
+}
+
+function setItemToLocalStorage(text) {
+  items = getItemsFromLocalStorage();
+  items.push(text);
+  localStorage.setItem("items", JSON.stringify(items));
 }
 
 function eventListeners() {
@@ -25,6 +41,7 @@ function eventListeners() {
 function addNewItem(e) {
   if (checkInput()) {
     createItem(input.value);
+    setItemToLocalStorage(input.value);
 
     input.value = "";
     e.preventDefault();
@@ -67,14 +84,33 @@ function deleteItem(e) {
   if (e.target.className === "fas fa-times") {
     if (confirm("Are you sure you want to delete")) {
       e.target.parentElement.parentElement.remove();
+      deleteItemFromLocalStorage(
+        e.target.parentElement.parentElement.textContent
+      );
     }
   }
   e.preventDefault();
 }
 
+//3 tane i phone 11 128 gb
+
+function deleteItemFromLocalStorage(text) {
+  items = getItemsFromLocalStorage();
+  items.forEach(function (item, index) {
+    if (item === text) {
+      items.splice(index, 1);
+    }
+  });
+  localStorage.setItem("items", JSON.stringify(items));
+}
+
 function deleteAllItems(e) {
   if (confirm("Are you sure you want to delete all")) {
-    taskList.innerHTML = "";
+    //taskList.innerHTML = "";
+    while (taskList.firstChild) {
+      taskList.removeChild(taskList.firstChild);
+    }
+    localStorage.clear();
   }
 
   //sorunlu calısıyor
