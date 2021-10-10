@@ -67,3 +67,94 @@ function save() {
   $("#btnSave").toggleClass("accapted") //yoksa ekler varsa cıakrtır
   $("img").attr("width","600")
 }
+
+
+let val = $("p");
+
+$(document).ready(function () {
+  console.log("ready 1");
+});
+
+$(function () {
+  $(".self-par").click(function () {
+    $(this).addClass("self-par-color");
+  });
+});
+
+console.log(val);
+console.clear();
+
+// jQery Change Event
+$(document).ready(function () {
+  $(".control").change(function () {
+    console.log($(this).val());
+  });
+});
+
+// jQery Show/Hide/Fade/Slide Events
+
+$(document).ready(function () {
+    //Show Hide
+  $("#hide").click(function () {
+    $(".oldLecture").hide(1000, function () {
+      alert("Old Lectures Hid");
+      return;
+    });
+  });
+
+  $("#show").click(function () {
+    $(".oldLecture").show(2000, function () {
+      alert("Old Lectures Activated");
+      return;
+    });
+  });
+
+  $("#showHideToggle").click(function () {
+    $(".oldLecture").toggle(2500, callbackMethod());
+    return;
+  });
+
+  //Slide Up Down
+
+  $("#slideUp").click(function () {
+    $(".oldLecture").slideUp(1000);
+  });
+
+  $("#slideDown").click(function () {
+    $(".oldLecture").slideDown(2000);
+  });
+
+  $("#slideToggle").click(function () {
+    $(".oldLecture").slideToggle(2500, callbackMethod());
+    return;
+  });
+
+  //Fade In Out To
+
+  $("#fadeIn").click(function () {
+    $(".oldLecture").fadeIn(1000);
+  });
+
+  $("#fadeOut").click(function () {
+    $(".oldLecture").fadeOut(1000);
+  });
+
+  $("#fadeTo").click(function () {
+    $(".oldLecture").fadeTo(1000,0.5);
+  });
+
+  $("#fadeBack").click(function () {
+    $(".oldLecture").fadeTo(1000,1);
+  });
+
+  $("#fadeToggle").click(function () {
+    $(".oldLecture").fadeToggle(2500, callbackMethod());
+    return;
+  });
+});
+
+function callbackMethod() {
+  console.log("calbackmethod called after animation ended.");
+  //use function beside of nested function. nested tripples the query but callback ends after finish.
+  return;
+}

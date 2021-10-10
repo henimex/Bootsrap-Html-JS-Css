@@ -17,7 +17,27 @@
 
 <body>
 
-  <div class="container">
+
+  <div class="mesgBoxBody" id="message-box">
+    <div class="selfHeader" id="headerMsg">
+      <span class="closeTag" id="closeTag"><strong>x</strong></span>
+      New Message</div>
+    <div class="selfContent" id="contentMsg">
+      Message Information
+    </div>
+  </div>
+
+  <button type="button" id="showMsgBox">Show MSG Box</button>
+
+  <div class="container mt-2">
+    <button class="btn" type="button" id="animate">Animate</button>
+      <div id="box">
+        Merhaba
+      </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br>
+
+  <div class="container oldLecture mt-5">
     <h1>jQuery Dersleri</h1>
     <a href="#">Empty Link</a>
     <h3 class="page-header" id="header">jQuery Dersleri</h3>
@@ -31,17 +51,56 @@
     <input id="surName" type="text" placeholder="Surname" value="">
     <button id="btnSave" type="" onclick="save()">Save</button>
   </div>
-  
 
-  <div class="container mt-3" align="center">
-    <img src="https://picsum.photos/450/350" alt="lorem">
+
+  <div class="container mt-3 oldLecture" align="center">
+    <img src="https://picsum.photos/350/250" alt="lorem">
     <p id="p1">Web Developer Eğitimi 1</p>
     <p id="p2">Web Developer Eğitimi 2</p>
     <p id="p3" class="self-par">Web Developer Eğitimi 3</p>
     <p id="p4" class="self-par">Web Developer Eğitimi 4</p>
-    <p id="p5" class="self-par">Web Developer Eğitimi 5</p>
-    <p id="p6" class="self-par">Web Developer Eğitimi 6</p>
   </div>
+
+  <div class="container oldLecture">
+    <form>
+      <p>
+        Ad: <input type="text" class="control">
+      <p>
+        Hobiler : <select name="" id="" class="control">
+          <option value="spor" selected="selected">Spor Yapmak</option>
+          <option value="sinema">Sinema</option>
+        </select>
+      </p>
+      </p>
+    </form>
+  </div>
+
+  <div class="container">
+    <p id="showHide"><strong>Show Hide Effect</strong></p>
+    <div class="btn-group">
+      <button class="btn btn-warning m-1" id="hide">Hide Old Lectures</button>
+      <button class="btn btn-warning m-1" id="show">Show Old Lectures</button>
+      <button class="btn btn-danger m-1" id="showHideToggle">Show/Hide Old Lectures [Toggle Button]</button>
+    </div>
+    <div class="btn-group mt-2">
+      <button class="btn btn-info m-1" id="slideUp">Slide Up Old Lectures</button>
+      <button class="btn btn-info m-1" id="slideDown">Slide Down Old Lectures</button>
+      <button class="btn btn-primary m-1" id="slideToggle">Slide Old Lectures [Toggle Button]</button>
+    </div>
+    <div class="btn-group mt-2">
+      <button class="btn btn-info m-1" id="fadeIn">Fade In Old Lectures</button>
+      <button class="btn btn-info m-1" id="fadeOut">Fade Out Old Lectures</button>
+      <button class="btn btn-info m-1" id="fadeTo">Fade To 0.5</button>
+      <button class="btn btn-info m-1" id="fadeBack">Fade To 1</button>
+      <button class="btn btn-primary m-1" id="fadeToggle">Fade Old Lectures [Toggle Button]</button>
+    </div>
+  </div>
+
+
+
+
+
+
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

@@ -12,7 +12,47 @@ h1 {
   color: greenyellow;
   background-color: black;
 }
-.self-par-color{
-    color: red;
-    font-size: 24px;
+.self-par-color {
+  color: red;
+  font-size: 24px;
+}
+#box {
+  position: absolute;
+  top: 150px;
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+  text-align: center;
+}
+
+.mesgBoxBody {
+  margin: 0;
+  padding: 0;
+}
+
+#message-box {
+  background-color: green;
+  text-align: center;
+  color: white;
+}
+
+.selfHeader {
+  cursor: pointer;
+  height: 50px;
+  padding: 10px;
+  border-bottom: 1px solid #fff;
+}
+
+.selfContent {
+  height: 200px;
+  padding: 10px;
+  display: none;
+}
+
+.closeTag{
+    float: right;
+}
+
+.closeTag:hover{
+    color: black;
 }
