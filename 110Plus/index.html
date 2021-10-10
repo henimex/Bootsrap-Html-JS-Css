@@ -14,12 +14,37 @@
             color: rgb(26, 214, 26);
             text-align: center;
         }
+
+        .selfBody {
+            width: 1200px;
+            height: 1000px
+        }
+
+        .selfLi {
+            color: rgb(11, 155, 18);
+        }
     </style>
 </head>
 
 <body>
 
-    <h4 class="display-3 self_header"> Service is Running</h4>
+    <h4 id="header" class="display-3 self_header"> Service is Running</h4>
+    <ol id="ol1" class="test list bg-dark">
+        <li class="selfLi">JavaScript <a class="test button" href="if yo can read this. DOM is almost done">Test Link</a> </li>
+        <li class="selfLi">C# <a class="test" href="#">Test Link</a></li>
+        <li class="selfLi">Angular React <a class="test" href="#">Test Link</a></li>
+        <li class="selfLi">Kotlin <a class="test" href="#">Test Link</a></li>
+        <li class="selfLi">Java <a class="test" href="#">Test Link</a></li>
+        <li class="selfLi">Oracle <a class="test" href="#">Test Link</a></li>
+        <li class="selfLi">Rubby <a class="test" href="#">Test Link</a></li>
+    </ol>
+
+    <button class="btn btn-primary" id="btnDeleteAll" href="#">Tümünü Sİl</button>
+    <button class="btn btn-primary" id="btnAdd" href="#">Hover Test</button>
+    <button class="btn btn-primary" id="btnEventTester" href="#">Event Tester</button>
+
+    <label for="nameInput">Name</label>
+    <input type="text" id="nameInput">
 
     <script src="script.js"></script>
 </body>
