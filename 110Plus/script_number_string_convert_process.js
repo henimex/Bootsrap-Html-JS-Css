@@ -1266,3 +1266,18 @@ function eventHandler(event) {
   console.log(`Event Type : ${event.type}`);
   
 }
+
+//Event - Keyboard
+
+const input = document.querySelector('#nameInput');
+
+input.addEventListener('keydown',eventHandler);
+input.addEventListener('keyup',eventHandler);
+input.addEventListener('focus',eventHandler);
+
+function eventHandler(e){
+    console.log(`Event Type : ${e.type}`);
+    // console.log(`KeyKode : ${e.keyCode}`);
+    // console.log(`KeyKode : ${e.target.value}`);
+    e.target.style.backgroundColor = 'cyan';
+}

@@ -1,0 +1,79 @@
+//UI Variables
+
+const form = document.querySelector("form");
+const input = document.querySelector("#txtTaskName");
+const btnDeleteAll = document.querySelector("#btnDeleteAll");
+const taskList = document.querySelector("#task-list");
+
+eventListeners();
+
+function eventListeners() {
+  form.addEventListener("submit", addNewItem);
+  taskList.addEventListener("click", deleteItem);
+  btnDeleteAll.addEventListener("click", deleteAllItems);
+}
+
+function addNewItem(e) {
+  if (checkInput()) {
+    const li = createLi();
+    const a = createA();
+
+    li.appendChild(a);
+    taskList.appendChild(li);
+
+    input.value = "";
+    e.preventDefault();
+  }
+}
+
+function checkInput() {
+  if (input.value === "") {
+    alert("Add New Item");
+    console.error("Empty Input Adding Cancalled");
+    return false;
+  }
+  return true;
+}
+
+function createA() {
+  const a = document.createElement("a");
+  a.classList = "delete-item float-right";
+  a.setAttribute("href", "#");
+  a.innerHTML = '<i class="fas fa-times"></i>';
+  return a;
+}
+
+function createLi() {
+  const li = document.createElement("li");
+  li.className = "list-group-item list-group-item-secondary";
+  li.appendChild(document.createTextNode(input.value));
+  return li;
+}
+
+function deleteItem(e) {
+  if (confirm("Are you sure you want to delete")) {
+    if (e.target.className === "fas fa-times") {
+      e.target.parentElement.parentElement.remove();
+    }
+  }
+
+  e.preventDefault();
+}
+
+function deleteAllItems(e) {
+  if (confirm("Are you sure you want to delete all")) {
+    taskList.innerHTML = "";
+  }
+
+  //sorunlu calısıyor
+  //   if (confirm("Are you sure you want to delete all")) {
+  //     taskList.childNodes.forEach(function (item) {
+  //       if (item.nodeType === 1) {
+  //           console.log(item)
+  //         item.remove();
+  //       }
+  //     });
+  //   }
+
+  e.preventDefault();
+}

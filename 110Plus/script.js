@@ -1,10 +1,23 @@
-//Event - Keyboard
+//Local Storage
+const firstName = localStorage.setItem("firstName", "Joseph");
+const lastName = localStorage.setItem("lastName", "HenimeX");
+let hobbies = ['Bisiklet', 'Yüzme', 'Film']
 
-const input = document.querySelector('#nameInput');
+localStorage.setItem("hobbies", JSON.stringify(hobbies))
+let lsHobbies = JSON.parse(localStorage.getItem("hobbies"))
 
-input.addEventListener('keydown',eventHandler);
-input.addEventListener('keyup',eventHandler);
+let val = localStorage.getItem("firstName");
+val = localStorage.getItem("lastName");
+localStorage.removeItem("lastName")
+//localStorage.clear();
+console.log(val);
+console.log(lsHobbies);
+console.log(localStorage);
 
-function eventHandler(e){
-    console.log(`Event Type : ${e.type}`);
-}
+
+//Session Storage
+
+const city = sessionStorage.setItem("city", "Eskisehir");
+const country = sessionStorage.setItem("country", "Türkiye");
+
+console.log(sessionStorage);
