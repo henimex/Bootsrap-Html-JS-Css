@@ -1,0 +1,18 @@
+h1 {
+  color: red;
+  text-align: center;
+}
+.highlight {
+  background-color: yellow;
+}
+.accapted {
+  font-size: 25px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: greenyellow;
+  background-color: black;
+}
+.self-par-color{
+    color: red;
+    font-size: 24px;
+}
