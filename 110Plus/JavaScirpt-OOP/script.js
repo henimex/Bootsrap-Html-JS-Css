@@ -59,7 +59,8 @@ Employee.prototype.newCalculation = function () {
     tax = Math.round((payment * 27) / 100);
     net = Math.round(payment - tax);
   }
-  return `Maaş ve Vergi Bilgisi v2: 
+  return {
+    message: `Maaş ve Vergi Bilgisi v2: 
   \n==============================
   \nÇalışan İsmi : ${this.name}  
   \nAlınan Aylık : ${this.salary} TL
@@ -70,7 +71,15 @@ Employee.prototype.newCalculation = function () {
   \nNet Ödenen   : ${net} TL
   \n==============================
   \n${this.name} 'e ${days} günde, günlük ${dailySalary} TL den Toplam ${payment} TL hesaplanmış, 
-  Bu tutarın vergisi ${tax} TL olarak belirlenmiş ve ${net} TL Net olarak ödenmiştir.`;
+  Bu tutarın vergisi ${tax} TL olarak belirlenmiş ve ${net} TL Net olarak ödenmiştir.`,
+    data: {
+      days: days,
+      dailySalary: dailySalary,
+      tax: tax,
+      payment: payment,
+      net: net,
+    },
+  };
 };
 
 let ferhat = new Employee("Ferhat", 4500);
@@ -85,4 +94,9 @@ employees.forEach(function (item) {
 });
 
 let test = new Employee("test", 1500);
-console.log(test.newCalculation());
+console.log(test.newCalculation().message);
+console.log(test.newCalculation().data.days);
+console.log(test.newCalculation().data.dailySalary);
+console.log(test.newCalculation().data.tax);
+console.log(test.newCalculation().data.payment);
+console.log(test.newCalculation().data.net);
