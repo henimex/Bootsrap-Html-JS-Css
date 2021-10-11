@@ -1,4 +1,7 @@
 function Employee(name, salary) {
+  if (!(this instanceof Employee)) {
+    return new Employee(name, salary);
+  }
   this.name = name;
   this.salary = salary;
   this.calculateTax = function () {
@@ -9,13 +12,17 @@ function Employee(name, salary) {
     var dailySalary = Math.round(salary / 30);
     var tax = 0;
     var payment = Math.round(dailySalary * days);
+    var net = 0;
 
     if (payment <= 20000) {
       tax = Math.round((payment * 20) / 100);
+      net = Math.round(payment - tax);
     } else if (payment > 20000 && payment <= 30000) {
       tax = Math.round((payment * 25) / 100);
+      net = Math.round(payment - tax);
     } else if (payment > 30000) {
       tax = Math.round((payment * 27) / 100);
+      net = Math.round(payment - tax);
     }
     return `Maaş ve Vergi Bilgisi v1: 
     \n==============================
@@ -25,9 +32,10 @@ function Employee(name, salary) {
     \nGünlük Ücret : ${dailySalary} TL
     \nÖdenen Maaş  : ${payment} TL
     \nVergi        : ${tax} TL
+    \nNet Ödenen   : ${net} TL
     \n==============================
-    \n${name} 'e ${days} günde, günlük ${dailySalary} TL den Toplam ${payment} TL ödenmiş. 
-    Bu ödenen tutarın vergisi ${tax} TL olarak hesaplanmıştır.`;
+    \n${name} 'e ${days} günde, günlük ${dailySalary} TL den Toplam ${payment} TL hesaplanmış, 
+    Bu tutarın vergisi ${tax} TL olarak belirlenmiş ve ${net} TL Net olarak ödenmiştir.`;
   };
 }
 
@@ -39,13 +47,17 @@ Employee.prototype.newCalculation = function () {
   var dailySalary = Math.round(this.salary / 30);
   var tax = 0;
   var payment = Math.round(dailySalary * days);
+  var net = 0;
 
   if (payment <= 20000) {
     tax = Math.round((payment * 20) / 100);
+    net = Math.round(payment - tax);
   } else if (payment > 20000 && payment <= 30000) {
     tax = Math.round((payment * 25) / 100);
+    net = Math.round(payment - tax);
   } else if (payment > 30000) {
     tax = Math.round((payment * 27) / 100);
+    net = Math.round(payment - tax);
   }
   return `Maaş ve Vergi Bilgisi v2: 
   \n==============================
@@ -55,15 +67,16 @@ Employee.prototype.newCalculation = function () {
   \nGünlük Ücret : ${dailySalary} TL
   \nÖdenen Maaş  : ${payment} TL
   \nVergi        : ${tax} TL
+  \nNet Ödenen   : ${net} TL
   \n==============================
-  \n${this.name} 'e ${days} günde, günlük ${dailySalary} TL den Toplam ${payment} TL ödenmiş. 
-  Bu ödenen tutarın vergisi ${tax} TL olarak hesaplanmıştır.`;
+  \n${this.name} 'e ${days} günde, günlük ${dailySalary} TL den Toplam ${payment} TL hesaplanmış, 
+  Bu tutarın vergisi ${tax} TL olarak belirlenmiş ve ${net} TL Net olarak ödenmiştir.`;
 };
 
 let ferhat = new Employee("Ferhat", 4500);
-let dilek = new Employee("Dilek", 4500);
+let dilek = Employee("Dilek", 4500);
 let esila = new Employee("Esila", 4500);
-let aliAlp = new Employee("Ali Alp", 4500);
+let aliAlp = Employee("Ali Alp", 4500);
 
 var employees = [ferhat, dilek, esila, aliAlp];
 
@@ -71,5 +84,5 @@ employees.forEach(function (item) {
   console.log(item.calculateTax());
 });
 
-let test = new Employee("test",1500);
+let test = new Employee("test", 1500);
 console.log(test.newCalculation());
