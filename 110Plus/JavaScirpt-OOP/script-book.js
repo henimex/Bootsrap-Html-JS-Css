@@ -43,3 +43,51 @@ function Person(firstName, birthYear, job) {
   console.log(ali.hasOwnProperty('lastName')); // prototype tarafından gelen ozellik
   
   console.clear();
+
+
+  let PersonL1 = function (name, birthDay, job) {
+    this.name = name;
+    this.birthDay = birthDay;
+    this.job = job;
+  };
+  
+  PersonL1.prototype.calculateAge = function () {
+    return 2021 - this.birthDay;
+  };
+  
+  let Teacher = function (name, birthDay, job, subject) {
+    PersonL1.call(this, name, birthDay, job);
+    this.subject = subject;
+  };
+  
+  Teacher.prototype = Object.create(PersonL1.prototype);
+  Teacher.prototype.constructor = Teacher;
+  
+  Teacher.prototype.greeting = function () {
+    return "Hollo my name is ", this.name;
+  };
+  
+  let ss = new PersonL1("dsadsa", 2001, "asd");
+  let emel = new Teacher("emel", 1988, "tecaher", "Math");
+  let eredem = new Teacher("eredem", 2001, "testyer", "what the");
+  
+  console.log(Teacher.prototype.constructor);
+  console.log(ss.calculateAge());
+  console.log(emel);
+  console.log(emel.calculateAge());
+  console.log(eredem);
+  
+  String.prototype.repeat = function (n) {
+    return new Array(n + 1).join(this);
+  };
+  
+  Array.prototype.selfRemove = function (member) {
+    var index = this.indexOf(member);
+    if (index > -1) {
+      this.splice(index, 1);
+    }
+    return this;
+  };
+  
+  console.log("henimex ".repeat(4));
+  
