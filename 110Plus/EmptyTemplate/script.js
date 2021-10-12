@@ -1,0 +1,1 @@
+$("#titleLes").text("Lesson Information")
