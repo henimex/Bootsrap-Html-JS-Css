@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/b8e9da0aef.js" crossorigin="anonymous"></script>
+
+  <title>Course App</title>
+</head>
+
+<body>
+  
+  <div align="center">
+    <h1>47-Dynamicism</h1>
+    <h3 id="titleLes">Script File Not Found</h1>
+      <hr>
+  </div>
+
+
+<div class="container mt-3">
+  <div class="row">
+
+    <div class="col-md-5">
+      <form id="new-course">
+        <div class="form-group">
+          <label for="title">Course Title</label>
+          <input type="text" class="form-control" placeholder="" id="title">
+        </div>
+
+          <div class="form-group">
+            <label for="instructor">Instructor</label>
+            <input type="text" class="form-control" placeholder="" id="instructor">
+          </div>
+
+          <div class="form-group">
+            <label for="image">Image</label>
+            <input type="text" class="form-control" placeholder="" id="image">
+          </div>
+          <button class="btn btn-primary" type="submit" id="btnSubmit">Save</button>
+
+      </form>
+    </div>
+    <div class="col-md-7 mt-4">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Instructor</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="course-list">
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="scriptES6.js"></script>
+</body>
+
+</html>
