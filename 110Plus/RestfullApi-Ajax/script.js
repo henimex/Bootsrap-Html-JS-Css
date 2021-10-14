@@ -48,11 +48,17 @@ var products = [
   { id: 4, name: "Mainboard", price: 4000 },
 ];
 
-function addProduct(product,callback) {
-  setTimeout(() => {
-    products.push(product);
-    callback();
-  }, 2000);
+let added = true;
+
+function addProduct(product, callback) {
+  if (added) {
+    setTimeout(() => {
+      products.push(product);
+      callback(null,product);
+    }, 2000);
+  } else {
+    callback("500",product);
+  }
 }
 
 function getProducts() {
@@ -63,4 +69,11 @@ function getProducts() {
   }, 1000);
 }
 
-addProduct({id:5,name:"HeadPhone",price:5000},getProducts);
+addProduct({ id: 5, name: "HeadPhone", price: 5000 }, getProducts);
+addProduct({ id: 5, name: "HeadPhone", price: 5000 }, function (error, data) {
+  if (error) {
+    console.log("Error: ", error);
+  } else {
+    console.log("Data : ", data);
+  }
+});
