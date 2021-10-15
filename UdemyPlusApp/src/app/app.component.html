@@ -8,11 +8,18 @@
     <div class="col-5">
 
       <div class="input-group mb-2">
-        <input type="text" class="form-control" id="eventName" placeholder="">
+        <input type="text" class="form-control" id="eventName" #todoText placeholder="">
         <div class="input-group-append">
-          <button (click)="addEvent($event)" class="btn btn-primary">Add</button>
+          <button (click)="addItem(todoText.value); todoText.value='';"  class="btn btn-primary" >Add</button>
         </div>
       </div>
+
+
+      <div class="custom-control custom-checkbox my-3">
+        <input type="checkbox" class="custom-control-input" [(ngModel)]="displayAll">
+        <label for="displayAll"> &nbsp; Display All</label>
+      </div>
+
 
       <table class="table table-striped table-bordered">
         <thead>
