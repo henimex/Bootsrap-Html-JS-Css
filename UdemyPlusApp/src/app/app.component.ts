@@ -1,21 +1,27 @@
 import { Component } from '@angular/core';
+import { Model } from './model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'UdemyPlusApp';
-  user = 'HenimeX';
-  user2 = 'HenimeX2';
+  model = new Model();
 
-  items = [
-    {description: 'Kahvaltı', action: 'No'},
-    {description: 'Sinema', action: 'No'},
-    {description: 'Spor', action: 'No'},
-    {description: 'Fatura', action: 'No'},
-    {description: 'Ders', action: 'No'}
-  ];
+  getName(){
+    return this.model.user
+  }
 
+  get Items(){
+    //return this.model.items.sort((a,b)=>a.description.localeCompare(b.description)); //filter(item => !item.action);
+    return this.model.items.filter(item => !item.action);
+  }
+
+  addEvent(event:any){
+    console.log(event);
+    let obj = {description: "value",action:false}
+    this.model.items.push(obj)
+  }
 }
