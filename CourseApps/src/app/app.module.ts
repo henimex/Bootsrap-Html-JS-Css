@@ -7,13 +7,15 @@ import { TodoComponent } from './TodoApp/todo/todo.component';
 import { MovieComponent } from './MovieApp/Componnents/movie/movie.component';
 import { MoviesComponent } from './MovieApp/Componnents/movies/movies.component';
 import { FormsModule } from '@angular/forms';
+import { MovieDetailComponent } from './MovieApp/Componnents/movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
     MovieComponent,
-    MoviesComponent
+    MoviesComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,14 @@
-<div class="m-5">
-  <p>movies works!</p>
+<app-movie-detail [inputSelectedMovie]="selectedMovie"></app-movie-detail>
 
-  <h5>Movies</h5>
-  <app-movie></app-movie>
-  <app-movie></app-movie>
+<div class="card">
+  <div class="card-header">
+    Movie List
+  </div>
+  <ul class="list-group list-group-flush">
+    <li *ngFor="let movie of movies" class="list-group-item" (click)="onSelect(movie)"
+      [class.active]="movie===selectedMovie">
+      <span class="badge bg-primary">{{movie.id}} </span> {{movie.name}}
+      <button type="button" class="btn-close float-end" aria-label="Close"></button>
+    </li>
+  </ul>
 </div>
