@@ -8,6 +8,10 @@ import { MovieComponent } from './MovieApp/Componnents/movie/movie.component';
 import { MoviesComponent } from './MovieApp/Componnents/movies/movies.component';
 import { FormsModule } from '@angular/forms';
 import { MovieDetailComponent } from './MovieApp/Componnents/movie-detail/movie-detail.component';
+import { LoggingComponent } from './MovieApp/logging/logging.component';
+import { DashboardComponent } from './MovieApp/Componnents/dashboard/dashboard.component';
+import { NavbarComponent } from './MovieApp/Componnents/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +19,10 @@ import { MovieDetailComponent } from './MovieApp/Componnents/movie-detail/movie-
     TodoComponent,
     MovieComponent,
     MoviesComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    LoggingComponent,
+    DashboardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

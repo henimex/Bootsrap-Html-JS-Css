@@ -1,4 +1,4 @@
-<div class="card" *ngIf="inputSelectedMovie">
+<!-- <div class="card" *ngIf="inputSelectedMovie">
   <div class="card-body">
     <span class="badge bg-warning text-dark text-start">
       Id : {{inputSelectedMovie.id}} <br>Name : {{inputSelectedMovie.name}}
@@ -10,4 +10,25 @@
       </div>
     </div>
   </div>
+</div> -->
+
+<!-- Response Model Degişikliğinden Dolayı Observable Donmedi Manuel Degistirildi. -->
+<div class="card" *ngIf="movie">
+  <div class="card-body">
+    <span class="badge bg-warning text-dark text-start">
+      Id : {{movie.id}}
+    </span>
+    <div class="card-text ">
+      <img src="{{movie.imageUrl}}">
+      <h4>{{movie.name}}</h4>
+      <p class="text-justify">{{movie.description}}</p>
+    </div>
+    <div class="input-group">
+      <input type="text" [(ngModel)]="movie.name" class="form-control">
+      <div class="input-group-append">
+        <button class="btn btn-outline-dark" type="button">Update</button>
+      </div>
+    </div>
+  </div>
 </div>
+

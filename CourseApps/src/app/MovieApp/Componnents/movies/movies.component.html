@@ -1,14 +1,16 @@
-<app-movie-detail [inputSelectedMovie]="selectedMovie"></app-movie-detail>
+<!-- <app-movie-detail [inputSelectedMovie]="selectedMovie"></app-movie-detail> -->
 
 <div class="card">
   <div class="card-header">
     Movie List
   </div>
   <ul class="list-group list-group-flush">
-    <li *ngFor="let movie of movies" class="list-group-item" (click)="onSelect(movie)"
-      [class.active]="movie===selectedMovie">
+    <li *ngFor="let movie of movies" class="list-group-item" routerLink="/detail/{{movie.id}}">
       <span class="badge bg-primary">{{movie.id}} </span> {{movie.name}}
       <button type="button" class="btn-close float-end" aria-label="Close"></button>
     </li>
   </ul>
 </div>
+
+
+<!-- [class.active]="movie===selectedMovie" -->
