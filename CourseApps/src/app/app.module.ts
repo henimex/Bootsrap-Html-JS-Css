@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { MovieDetailComponent } from './MovieApp/Componnents/movie-detail/movie-
 import { LoggingComponent } from './MovieApp/logging/logging.component';
 import { DashboardComponent } from './MovieApp/Componnents/dashboard/dashboard.component';
 import { NavbarComponent } from './MovieApp/Componnents/navbar/navbar.component';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 
 @NgModule({
@@ -27,7 +29,10 @@ import { NavbarComponent } from './MovieApp/Componnents/navbar/navbar.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

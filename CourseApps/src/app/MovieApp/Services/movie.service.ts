@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Movie } from 'src/app/Models/movie';
@@ -8,7 +9,10 @@ import { LoggingService } from './logging.service';
   providedIn: 'root',
 })
 export class MovieService {
-  constructor(private loggingService: LoggingService) {}
+  constructor(
+    private loggingService: LoggingService,
+    private http: HttpClientModule
+  ) {}
 
   getMovies(): Observable<Movie[]> {
     this.loggingService.add('MovieService : Movies Listed');
