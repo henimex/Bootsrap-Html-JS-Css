@@ -13,6 +13,7 @@ import { LoggingComponent } from './MovieApp/logging/logging.component';
 import { DashboardComponent } from './MovieApp/Componnents/dashboard/dashboard.component';
 import { NavbarComponent } from './MovieApp/Componnents/navbar/navbar.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { ProductComponent } from './DataBindingExample/Components/product/product.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
     MovieDetailComponent,
     LoggingComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

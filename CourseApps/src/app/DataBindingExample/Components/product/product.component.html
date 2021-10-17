@@ -1,0 +1,39 @@
+<div class="bg-primary text-white m-2 p-2">
+  There are {{model.getProducts().length}} products in Repo
+</div>
+
+<ul>
+  <li> Name = {{model.getProductById(2).name}} </li>
+</ul>
+
+<input type="number" id="name" placeholder="" #idNum>
+
+<h2> {{product.name}}</h2>
+1<img class="mx-2" src="{{product.imageUrl}}" alt="">
+2<img class="mx-2" [src]="product.imageUrl" alt="">
+<hr>
+<div [class]="getClasses(2)">
+  Ürün Adı : {{model.getProductById(2).name}} Fiyatı : {{model.getProductById(2).price}}
+</div>
+
+<div [class]="getClasses(3)">
+  Ürün Adı : {{model.getProductById(3).name}} Fiyatı : {{model.getProductById(3).price}}
+</div>
+
+<div [class]="getClasses(4)">
+  Ürün Adı : {{model.getProductById(4).name}} Fiyatı : {{model.getProductById(4).price}}
+</div>
+
+<div [class]="getClasses(5)">
+  Ürün Adı : {{model.getProductById(5).name}} Fiyatı : {{model.getProductById(5).price}}
+</div>
+<span> [class] ile yapılan atamalar onceki class atamalrını ezer</span>
+<br>
+<hr>
+<h1>[class.disabled] [class.active]</h1>
+<button class="btn btn-primary disabled" [class.disabled]="disabled" type="button">Disabled</button>
+<hr>
+<div class="m-2 p-2" [ngClass]="getClassMap(4)">
+  <h1>ngClass</h1>
+  Ürün Adı : {{model.getProductById(4).name}} Fiyatı : {{model.getProductById(4).price}}
+</div>
