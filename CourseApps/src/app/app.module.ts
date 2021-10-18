@@ -16,6 +16,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ProductComponent } from './DataBindingExample/Components/product/product.component';
 import { SummaryPipe } from './DataBindingExample/Pipes/summary.pipe';
 import { DirectivesComponent } from './DataBindingExample/Components/directives/directives.component';
+import { InputEmailDirective } from './DataBindingExample/Components/CustomDirective/input-email.directive';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { DirectivesComponent } from './DataBindingExample/Components/directives/
     NavbarComponent,
     ProductComponent,
     SummaryPipe,
-    DirectivesComponent
+    DirectivesComponent,
+    InputEmailDirective
   ],
   imports: [
     BrowserModule,
