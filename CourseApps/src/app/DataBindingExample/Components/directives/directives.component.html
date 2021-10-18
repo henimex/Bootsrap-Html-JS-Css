@@ -1,0 +1,14 @@
+{{products[0].name}}
+
+<div *ngIf="products.length > 0; then productsInList else noProduct" class="bg-primary text-warning">
+
+</div>
+
+
+<ng-template #productsInList>
+  There are {{products.length}} products in list
+</ng-template>
+
+<ng-template #noProduct>
+There is no product in list
+</ng-template>

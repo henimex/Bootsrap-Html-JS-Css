@@ -14,6 +14,8 @@ import { DashboardComponent } from './MovieApp/Componnents/dashboard/dashboard.c
 import { NavbarComponent } from './MovieApp/Componnents/navbar/navbar.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ProductComponent } from './DataBindingExample/Components/product/product.component';
+import { SummaryPipe } from './DataBindingExample/Pipes/summary.pipe';
+import { DirectivesComponent } from './DataBindingExample/Components/directives/directives.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { ProductComponent } from './DataBindingExample/Components/product/produc
     LoggingComponent,
     DashboardComponent,
     NavbarComponent,
-    ProductComponent
+    ProductComponent,
+    SummaryPipe,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,
