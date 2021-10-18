@@ -17,6 +17,7 @@ import { ProductComponent } from './DataBindingExample/Components/product/produc
 import { SummaryPipe } from './DataBindingExample/Pipes/summary.pipe';
 import { DirectivesComponent } from './DataBindingExample/Components/directives/directives.component';
 import { InputEmailDirective } from './DataBindingExample/Components/CustomDirective/input-email.directive';
+import { TableExampleComponent } from './DataBindingExample/Components/table-example/table-example.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { InputEmailDirective } from './DataBindingExample/Components/CustomDirec
     ProductComponent,
     SummaryPipe,
     DirectivesComponent,
-    InputEmailDirective
+    InputEmailDirective,
+    TableExampleComponent
   ],
   imports: [
     BrowserModule,
