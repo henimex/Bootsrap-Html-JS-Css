@@ -37,3 +37,54 @@
   <h1>ngClass</h1>
   Ürün Adı : {{model.getProductById(4).name}} Fiyatı : {{model.getProductById(4).price}}
 </div>
+<hr>
+
+<div class="m-2 p-2" [ngClass]="getClassMap(1)">
+  <h1><span [style.color]="colorTS">Still Uylulama Color RED</span></h1>
+  Ürün Adı : {{model.getProductById(1).name}} Fiyatı : {{model.getProductById(1).price}}
+</div>
+
+<div class="m-2 p-2" [ngClass]="getClassMap(1)">
+  <h1><span [style.fontSize]="fontSizeTS">Still Uylulama 2 FontSize 10</span></h1>
+  Ürün Adı : {{model.getProductById(1).name}} Fiyatı : {{model.getProductById(1).price}}
+</div>
+
+<div class="m-2 p-2" [ngClass]="getClassMap(1)">
+  <h1><span [style.color]="satatementColor">if Price >= 300 will red else green</span></h1>
+  <span><em>Dont forget to change both html and ts getProductById Number</em></span>
+  Ürün Adı : {{model.getProductById(3).name}} Fiyatı : {{model.getProductById(3).price}}
+</div>
+
+<div class="m-2 p-2" [ngClass]="getClassMap(1)">
+  <h1><span [ngStyle]="getStyles(5)">Obje olarak birden fazla still ekleme</span></h1>
+  Ürün Adı : {{model.getProductById(5).name}} Fiyatı : {{model.getProductById(5).price}}
+</div>
+<hr>
+Event Binding
+<div (click)="onDivClicked($event)" style="height:100px; width:300px; background-color:red">
+  <button id="1" name="btn-1" class="btn btn-primary" (click)="onSubmit($event)">Submit 1</button>
+  <button id="2" name="btn-2" class="btn btn-primary" (click)="onSubmit($event)">Submit 2</button>
+  <button id="3" name="btn-3" class="btn btn-primary" (click)="onSubmit($event)">Submit 3</button>
+</div>
+
+<hr>
+<input type="text" (keyup.enter)="onKeyUp()" placeholder="sadece enter ile tetiklenir">
+<input type="text" (keyup)="onKeyUp2($event)" placeholder="target value">
+<input type="text" (keyup.enter)="onKeyUp3(email.value)" #email placeholder="# value from html">
+
+<hr>
+Two Way Binding
+
+<input type="text" [(ngModel)]="testMail"  (keyup.enter)="twoWay()"><br>
+<span>Componenet üzerindeki mail: {{testMail}}</span>
+
+<hr>
+{{price}} <br>
+{{price|number:'1.1-2'}}
+noktadan sonra minimum kac karakter maximum kac karakter
+
+<hr>
+Custom Pipe <br>
+<p class="text-danger">Normal Text : {{pretext}}</p>
+<p class="text-success">Limited Text: {{pretext|summary:30}}</p>
+

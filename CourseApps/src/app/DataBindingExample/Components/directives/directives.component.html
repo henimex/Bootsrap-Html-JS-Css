@@ -1,0 +1,92 @@
+{{products[0].name}}
+
+<div *ngIf="products.length > 0; then productsInList else noProduct" class="bg-primary text-warning">
+
+</div>
+
+<ng-template #productsInList>
+  <div class="bg-primary text-black p-2 m-2">
+    There are {{products.length}} products in list
+  </div>
+</ng-template>
+
+<ng-template #noProduct>
+  <div class="bg-danger text-warning p-2 m-2">
+    There is no product in list
+  </div>
+</ng-template>
+
+
+<h5>ngSwitch</h5>
+<div class="bg-info m-2 p-2" [ngSwitch]="swChanger">
+  <span *ngSwitchCase="1">Swtich changer is One</span>
+  <span *ngSwitchCase="2">Swtich changer is Two</span>
+  <span *ngSwitchCase="3">Swtich changer is Three</span>
+  <span *ngSwitchCase="4">Swtich changer is Four</span>
+  <span *ngSwitchCase="5">Swtich changer is Five</span>
+  <span *ngSwitchCase="6">Swtich changer is Six</span>
+  <span *ngSwitchCase="'Test'">Swtich changer is String !</span>
+  <span *ngSwitchDefault>Swtich changer is Differend Than 1-6 and its {{swChanger}}</span>
+</div>
+
+<h5>ngFor</h5>
+<ul class="list-group m-5">
+  <li *ngFor="let product of products;index as i;first as First;last as Last;count as cNum;even as Even;odd as Odd"
+    class="list-group-item">
+    Index Değeri i den : {{i}} Name : <strong>{{product.name}}</strong>
+    <h4>{{product.price|number:'1.2-2'}} TL</h4>
+    <i *ngIf="First" class="badge bg-success"> First Item</i>
+    <i *ngIf="Last" class="badge bg-dark"> Last Item</i>
+    <i *ngIf="Even" class="badge bg-warning text-dark"> Even</i>
+    <i *ngIf="Odd" class="badge bg-info"> Odd</i>
+    <!-- <i *ngIf="cNum > 5" class="bg-dark text-danger">Count Bigger Than 5</i> -->
+  </li>
+</ul>
+
+<h5>Change Detection</h5>
+<div class="m-5">
+  <button class="btn btn-primary" (click)="addProduct()">Add Product</button>
+  <p>ngChange ve change eventleri ile ilgili detaylı bilgi araştırılacak</p>
+  <ul class="list-group m-5">
+    <li *ngFor="let product of products;index as i;" class="list-group-item">
+      Index Değeri i den : {{i}} Name : <strong>{{product.name}}</strong>
+      <h4>{{product.price|number:'1.2-2'}} TL</h4>
+    </li>
+  </ul>
+</div>
+
+<h5>ngTemplate</h5>
+<strong>Template 1 direk TS komutu gondererek</strong>
+<ng-template [ngTemplateOutlet]="prdList" [ngTemplateOutletContext]="{products:model.getProducts()}"></ng-template>
+<strong>Template 2 Method Cagırarak</strong>
+<ng-template [ngTemplateOutlet]="prdList" [ngTemplateOutletContext]="{products:getNewProducts()}"></ng-template>
+Burası Zaten Tetiklemeyi Yapıyor Initte Cagırmaya Gerek Yok
+<strong>Template 3 Değişkene Atayarak</strong>
+<ng-template [ngTemplateOutlet]="prdList" [ngTemplateOutletContext]="{products:newProducts}"></ng-template>
+
+<strong>Birden Fazla Degisken Olacaksa</strong>
+<ng-template [ngTemplateOutlet]="prdListArgs" [ngTemplateOutletContext]="{products:newProducts, cat:9}"></ng-template>
+
+
+<ng-template #prdList let-customPrd="products">
+  <div class="m-1">
+    <ul class="list-group m-2">
+      <li *ngFor="let product of customPrd;index as i;" class="list-group-item">
+        <strong>{{product.name}} <h4><em>{{product.price|number:'1.2-2'}}</em> TL</h4></strong>
+      </li>
+    </ul>
+  </div>
+</ng-template>
+
+<div class="hidden">
+  tempin ID si let-customPrd(temp icerisinde kullanılacak isim)="products(parametre olarak istenen isim.)"
+  <ng-template #prdListArgs let-customPrd="products" , let-categories="cat">
+    <div class="m-1">
+      <ul class="list-group m-2">
+        <li *ngFor="let product of customPrd;index as i;" class="list-group-item">
+          <strong>{{product.name}} <h4><em>{{product.price|number:'1.2-2'}}</em> TL</h4></strong>
+        </li>
+      </ul>
+    </div>
+  </ng-template>
+</div>
