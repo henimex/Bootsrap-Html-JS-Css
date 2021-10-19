@@ -8,32 +8,25 @@ import { ProductRepository } from '../../Models/product-repository';
   styleUrls: ['./table-example.component.css'],
 })
 export class TableExampleComponent implements OnInit {
-  model: ProductRepository = new ProductRepository();
-  product: Product = this.model.getProductById(3);
-  newProduct: Product = {
-    id: 1,
-    name: '',
-    description: '',
-    imageUrl: '',
-    price: 0,
-  };
-
-  constructor() {}
-
-  ngOnInit(): void {console.log(this.products)}
-
-  addProduct(product: Product=this.newProduct) {
-    let id = this.products.length+1;
-    product.id = id;
-    this.products.push(product);
-    console.log(this.products)
+  products: Product[];
+  model: ProductRepository;
+  selectedProduct: Product;
+  constructor() {
+    this.model = new ProductRepository();
+    this.products = this.model.getProducts();
   }
 
-  get products(): Product[] {
-    return this.model.getProducts();
+  ngOnInit(): void {}
+
+  getSelected(product:Product): boolean {
+    return product === this.selectedProduct;
   }
 
-  getEventModel(element:any){
-    console.log(element)
+  editProduct(product:Product): void {
+    this.selectedProduct = product;
+  }
+
+  deleteProduct(product:Product): void {
+
   }
 }

@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 m-1">
+      <div>
+        <div class="bg-info text-white m-2 p-2">
+
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" [(ngModel)]="newProduct.name" #name="ngModel" (change)="getEventModel(name)" id="" class="form-control" placeholder="">
+          </div>
+
+          <div class="form-group">
+            <label>Description</label>
+            <textarea type="text" [(ngModel)]="newProduct.description" name="" id="" class="form-control"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Image Url</label>
+            <input type="text" [(ngModel)]="newProduct.imageUrl" name="" id="" class="form-control" placeholder="">
+          </div>
+
+          <div class="form-group">
+            <label>Price</label>
+            <input type="number" [(ngModel)]="newProduct.price" name="" id="" class="form-control" placeholder="">
+          </div>
+
+          <button class="btn btn-warning my-3 float-end" (click)="addProduct()">Submit</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

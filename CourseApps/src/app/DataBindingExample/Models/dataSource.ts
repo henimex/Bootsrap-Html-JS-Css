@@ -51,7 +51,7 @@ export class SimpleDataSource {
         id: 7,
         name: 'Product Name 7',
         description: 'Description 7',
-        imageUrl: 'https://picsum.photos/200/300',
+        imageUrl: 'https://picsum.photos/200/306',
         price: 700,
       },
     ];

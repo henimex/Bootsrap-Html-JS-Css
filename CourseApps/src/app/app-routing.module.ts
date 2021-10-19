@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormExampleComponent } from './DataBindingExample/Components/form-example/form-example.component';
 import { ProductComponent } from './DataBindingExample/Components/product/product.component';
 import { TableExampleComponent } from './DataBindingExample/Components/table-example/table-example.component';
 import { DashboardComponent } from './MovieApp/Componnents/dashboard/dashboard.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'tables', component: TableExampleComponent },
   { path: 'todo', component: TodoComponent },
   { path: 'product', component: ProductComponent },
+  { path: 'forms', component: FormExampleComponent },
 
 ];
 

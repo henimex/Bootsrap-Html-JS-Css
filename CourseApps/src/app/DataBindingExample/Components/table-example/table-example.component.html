@@ -1,33 +1,58 @@
-<div class="container">
+<div class="container m-5">
   <div class="row">
-    <div class="col-8 m-1">
-      <div>
-        <div class="bg-info text-white m-2 p-2">
+    <div class="col-md-6">
+      <div class="bg-info text-white p-2" *ngIf="selectedProduct">
+        Selected Product : {{selectedProduct.name || 'No Selected Product'}}
+      </div>
+      <table class="table table-sm table-bordered mt-2">
+      <!-- <table class="table table-sm table-bordered w-50 mt-2"> -->
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products" (mouseover)="selectedProduct=product"
+            (mouseleave)="null" [class.bg-info]="getSelected(product)">
+            <td>{{product.id}}</td>
+            <td>
+              <img class="imgTumb" src="{{product.imageUrl}}" alt="">
+            </td>
+            <td>{{product.name}}</td>
+            <td>{{product.price | number : '1.2-2'}} TL</td>
+            <td>{{product.description}}</td>
+            <td>
+              <button (click)="editProduct(product)" class="btn btn-success btn-sm m-1">U</button>
+              <button (click)="deleteProduct(product)" class="btn btn-danger btn-sm">D</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-          <div class="form-group">
-            <label>Name</label>
-            <input type="text" [(ngModel)]="newProduct.name" #name="ngModel" (change)="getEventModel(name)" id="" class="form-control" placeholder="">
-          </div>
-
-          <div class="form-group">
-            <label>Description</label>
-            <textarea type="text" [(ngModel)]="newProduct.description" name="" id="" class="form-control"></textarea>
-          </div>
-
-          <div class="form-group">
-            <label>Image Url</label>
-            <input type="text" [(ngModel)]="newProduct.imageUrl" name="" id="" class="form-control" placeholder="">
-          </div>
-
-          <div class="form-group">
-            <label>Price</label>
-            <input type="number" [(ngModel)]="newProduct.price" name="" id="" class="form-control" placeholder="">
-          </div>
-
-          <button class="btn btn-warning my-3 float-end" (click)="addProduct()">Submit</button>
-
+    <div class="col-md-6">
+      <div class="form-group">
+        <div *ngIf="selectedProduct">
+          <label>Product ID [(ngModel)]</label>
+          <input type="text" class="form-control" [(ngModel)]="selectedProduct.id">
+          <label>Product Name [(ngModel)]</label>
+          <input type="text" class="form-control" [(ngModel)]="selectedProduct.name">
+          <label>Product ImageURL [(ngModel)]</label>
+          <input type="text" class="form-control" [(ngModel)]="selectedProduct.imageUrl">
+          <label>Product Price [(ngModel)]</label>
+          <input type="text" class="form-control" [(ngModel)]="selectedProduct.price">
+          <label>Product Description [(ngModel)]</label>
+          <input type="text" class="form-control" [(ngModel)]="selectedProduct.description">
         </div>
+        <label>Product Name #pName (input)</label>
+        <input #pName (keyup.enter)="selectedProduct.name=pName.value" type="text" class="form-control">
       </div>
     </div>
+
   </div>
 </div>

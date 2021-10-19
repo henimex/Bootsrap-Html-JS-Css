@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { TodoComponent } from './TodoApp/todo/todo.component';
 import { MovieComponent } from './MovieApp/Componnents/movie/movie.component';
 import { MoviesComponent } from './MovieApp/Componnents/movies/movies.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MovieDetailComponent } from './MovieApp/Componnents/movie-detail/movie-detail.component';
 import { LoggingComponent } from './MovieApp/logging/logging.component';
 import { DashboardComponent } from './MovieApp/Componnents/dashboard/dashboard.component';
@@ -18,6 +18,7 @@ import { SummaryPipe } from './DataBindingExample/Pipes/summary.pipe';
 import { DirectivesComponent } from './DataBindingExample/Components/directives/directives.component';
 import { InputEmailDirective } from './DataBindingExample/Components/CustomDirective/input-email.directive';
 import { TableExampleComponent } from './DataBindingExample/Components/table-example/table-example.component';
+import { FormExampleComponent } from './DataBindingExample/Components/form-example/form-example.component';
 
 
 @NgModule({
@@ -34,13 +35,17 @@ import { TableExampleComponent } from './DataBindingExample/Components/table-exa
     SummaryPipe,
     DirectivesComponent,
     InputEmailDirective,
-    TableExampleComponent
+    TableExampleComponent,
+    FormExampleComponent,
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     HttpClientInMemoryWebApiModule
 
   ],
