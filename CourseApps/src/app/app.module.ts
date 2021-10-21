@@ -19,6 +19,7 @@ import { DirectivesComponent } from './DataBindingExample/Components/directives/
 import { InputEmailDirective } from './DataBindingExample/Components/CustomDirective/input-email.directive';
 import { TableExampleComponent } from './DataBindingExample/Components/table-example/table-example.component';
 import { FormExampleComponent } from './DataBindingExample/Components/form-example/form-example.component';
+import { AngExamComponent } from './DataBindingExample/Components/ang-exam/ang-exam.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { FormExampleComponent } from './DataBindingExample/Components/form-examp
     InputEmailDirective,
     TableExampleComponent,
     FormExampleComponent,
+    AngExamComponent,
 
 
   ],

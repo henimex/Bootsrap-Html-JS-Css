@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AngExamComponent } from './DataBindingExample/Components/ang-exam/ang-exam.component';
 import { FormExampleComponent } from './DataBindingExample/Components/form-example/form-example.component';
 import { ProductComponent } from './DataBindingExample/Components/product/product.component';
 import { TableExampleComponent } from './DataBindingExample/Components/table-example/table-example.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'todo', component: TodoComponent },
   { path: 'product', component: ProductComponent },
   { path: 'forms', component: FormExampleComponent },
+  { path: 'exam', component: AngExamComponent },
 
 ];
 
